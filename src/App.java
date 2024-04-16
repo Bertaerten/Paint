@@ -15,6 +15,9 @@ public class App  extends PApplet{
         size(600, 400);
     }
 
+   PApplet s = new PApplet();
+    brush bill = new brush(6, s);
+
     public void setup(){
         fill(255);
     rect(50, 50, 200, 200);
@@ -31,7 +34,7 @@ public class App  extends PApplet{
 {
     if(mouseX<250 && mouseX>50){
         if(mouseY<250 && mouseY>50)
-        set(mouseX, mouseY, color(0));
+            bill.setPixels();      
     }   
     
   }
