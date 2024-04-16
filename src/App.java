@@ -16,13 +16,24 @@ public class App  extends PApplet{
     }
 
     public void setup(){
-     
+        fill(255);
+    rect(50, 50, 200, 200);
+    
     }
 
     public void draw(){
-        background(0);
-        
+        loadPixels();
+    
+        updatePixels();
     }
 
+   public void mouseDragged() 
+{
+    if(mouseX<250 && mouseX>50){
+        if(mouseY<250 && mouseY>50)
+        set(mouseX, mouseY, color(0));
+    }   
     
+  }
 }
+
