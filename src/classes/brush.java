@@ -20,7 +20,7 @@ r=radius;
 
 public void setPixels(){
 
-    for(int i=0; i>r ; i++){
+    for(int i=0; i<r ; i++){
         for(int j=r;j>0;j--){
             p.set(p.mouseX+(i-(r/2)), p.mouseY-(j-(r/2)), p.color(0));
         }

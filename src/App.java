@@ -11,12 +11,15 @@ public class App  extends PApplet{
 		PApplet.runSketch(processingArgs, mySketch);
     }
 
+    brush bill;
+
     public void settings(){
         size(600, 400);
+        bill = new brush(9, this);
     }
 
-   PApplet s = new PApplet();
-    brush bill = new brush(6, s);
+   
+
 
     public void setup(){
         fill(255);
