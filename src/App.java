@@ -15,7 +15,7 @@ public class App  extends PApplet{
 
     public void settings(){
         size(600, 400);
-        bill = new brush(9, this);
+        bill = new brush(90, this);
     }
 
    

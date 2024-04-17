@@ -12,10 +12,10 @@ int r;
 public brush(int radius, PApplet s){
 r=radius;
  p=s;
-
+/*
  if (r%2 != 0){ // størrelsen af brushen skal være et lige tal
     r++;
- }
+ } */
 }
 
 public void setPixels(){
