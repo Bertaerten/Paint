@@ -14,9 +14,9 @@ int y;
 
 
 public button(PApplet s, int ColorIn, int radiusIn, int xIn, int yIn){
-
+    p=s;
     radius = radiusIn;
-    color = ColorIN;
+    color = ColorIn;
     x = xIn;
     y = yIn;
 
@@ -33,18 +33,18 @@ public button(PApplet s, int ColorIn, int radiusIn, int xIn, int yIn){
      line(1500,5,1500,200);*/
 }
 public void drawButton(){
- circle(x, y, radius);
+ p.circle(x, y, radius);
 
 
- fill(color);//bare pt
- stroke(87,87,85,255);
+ p.fill(color);//bare pt
+ p.stroke(87,87,85,255);
 
- circle(x, y, radius); //disse skal laves om til variable der starter med disse farver
- if (mouseX>x-(radius/2) && mouseX<x+(radius/2) && mouseY>y-(radius/2) && mouseY<y+(radius/2)){
+ p.circle(x, y, radius); //disse skal laves om til variable der starter med disse farver
+ if (p.mouseX>x-(radius/2) && p.mouseX<x+(radius/2) && p.mouseY>y-(radius/2) && p.mouseY<y+(radius/2)){
  //start sort
- fill(179,182,183,150);
+ p.fill(179,182,183,150);
 
- circle(x, y, radius+5);
+ p.circle(x, y, radius+5);
  }
 }
 }

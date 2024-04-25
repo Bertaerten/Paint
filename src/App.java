@@ -13,6 +13,7 @@ public class App  extends PApplet{
 
     brush bill;
     brush hvid;
+    button bros;
     
 
     int brain = color(100, 150, 100);
@@ -20,9 +21,10 @@ public class App  extends PApplet{
 
 
     public void settings(){
-        size(600, 400);
+        size(1920, 1080);
         bill = new brush(9, brain, this);
         hvid = new brush(50, bruh, this);
+        bros = new button(this,bruh, 25, 1050,50);
     }
 
    
@@ -38,10 +40,17 @@ public class App  extends PApplet{
         loadPixels();
     
         updatePixels();
+        bros.drawButton();
     }
 
    public void mouseDragged() {
-        bill.setPixels();      
+    if(mouseButton==LEFT){
+        bill.setPixels();
+    }  else{
+        hvid.setPixels();  
+    }
+     
+           
     }   
     
   
