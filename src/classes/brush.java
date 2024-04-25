@@ -14,7 +14,7 @@ int Color;
 public brush(int radius, int ColorIN , PApplet s){
 r=radius;
  p=s;
-  Color = ColorIN;
+Color = ColorIN;
 /*
  if (r%2 != 0){ // størrelsen af brushen skal være et lige tal
     r++;
@@ -40,6 +40,11 @@ public void setPixels(){
 public void ChangeSize(int change){
     r=r+change;
 }
+public void setColor(int newColor){
+    Color=newColor;
+}
+
+    public boolean Is
 
 }
 

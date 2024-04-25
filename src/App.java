@@ -12,12 +12,13 @@ public class App  extends PApplet{
     }
 
     brush bill;
+    brush eraser;
 
     int brain = color(100, 150, 100);
 
     public void settings(){
         size(600, 400);
-        bill = new brush(90, brain, this);
+        bill = new brush(9, brain, this);
     }
 
    
