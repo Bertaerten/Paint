@@ -19,8 +19,8 @@ public class App  extends PApplet{
     }
 
     public void draw(){
-       int størrelseStor = 50
-       int størrelseLille = 
+       int størrelseStor = 50;
+       int størrelseLille = 30;
        int radiusStor = 25;
        int radiusLille = 15;
 
@@ -146,5 +146,13 @@ public class App  extends PApplet{
         
     }
 
+   public void mouseDragged() 
+{
+    if(mouseX<250 && mouseX>50){
+        if(mouseY<250 && mouseY>50)
+        set(mouseX, mouseY, color(0));
+    }   
     
+  }
 }
+
