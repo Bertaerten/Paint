@@ -11,8 +11,18 @@ public class App  extends PApplet{
 		PApplet.runSketch(processingArgs, mySketch);
     }
 
+    brush bill;
+    brush hvid;
+    
+
+    int brain = color(100, 150, 100);
+    int bruh = color(10, 10, 100);
+
+
     public void settings(){
         size(600, 400);
+        bill = new brush(9, brain, this);
+        hvid = new brush(50, bruh, this);
     }
 
    
@@ -30,13 +40,10 @@ public class App  extends PApplet{
         updatePixels();
     }
 
-   public void mouseDragged() 
-{
-    if(mouseX<250 && mouseX>50){
-        if(mouseY<250 && mouseY>50)
-        set(mouseX, mouseY, color(0));
+   public void mouseDragged() {
+        bill.setPixels();      
     }   
     
-  }
+  
 }
 
