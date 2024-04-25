@@ -13,9 +13,11 @@ public class App  extends PApplet{
 
     brush bill;
 
+    int brain = color(100, 150, 100);
+
     public void settings(){
         size(600, 400);
-        bill = new brush(90, this);
+        bill = new brush(90, brain, this);
     }
 
    
@@ -33,13 +35,10 @@ public class App  extends PApplet{
         updatePixels();
     }
 
-   public void mouseDragged() 
-{
-    if(mouseX<250 && mouseX>50){
-        if(mouseY<250 && mouseY>50)
-            bill.setPixels();      
+   public void mouseDragged() {
+        bill.setPixels();      
     }   
     
-  }
+  
 }
 
