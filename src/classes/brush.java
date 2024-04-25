@@ -44,7 +44,6 @@ public void setColor(int newColor){
     Color=newColor;
 }
 
-    public boolean Is
 
 }
 

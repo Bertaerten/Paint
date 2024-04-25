@@ -12,7 +12,6 @@ public class App  extends PApplet{
     }
 
     brush bill;
-    brush eraser;
 
     int brain = color(100, 150, 100);
 
