@@ -17,7 +17,7 @@ public class App  extends PApplet{
     
 
     int brain = color(100, 150, 100);
-    int bruh = color(10, 10, 100);
+    int bruh = color(255, 255, 255);
 
 
     public void settings(){
