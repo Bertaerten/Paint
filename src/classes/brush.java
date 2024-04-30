@@ -25,20 +25,29 @@ haardhed=0.5f;
 }
 
 public void setPixels(){
+    p.colorMode(1, 255);// RGB mode
 
     for(int i=0; i<r ; i++){
         for(int j=0;j<r;j++){
             if(p.mouseX+(i-(r/2)) > minX && p.mouseX+(i-(r/2))< maksX){
                 if (p.mouseY-(j-(r/2)) > minY && p.mouseY-(j-(r/2)) < maksY) {
+                    /* 
                     double pw1= (r/2)-i;
                     double pw2= (r/2)-j;
 
                     double l = Math.sqrt( Math.pow(pw1,2) + Math.pow(pw2, 2) );// (i-x)^2 + (j-y)^2
-                    System.out.println(l);
-                    int alpha = (int) (r/l); 
+                    //System.out.println(l);
+                    double fade = (r/(2*l)); // linær
+                    
+                    //fade = 1-(Math.pow(fade, (haardhed/fade)));
+                    //System.out.println(fade);
+                    float alpha = (float) (fade);
                     int farve = p.color(0,0,0, alpha);
+                    */
 
-                    p.set(p.mouseX+(i-(r/2)), p.mouseY-(j-(r/2)), farve);
+
+                    p.pixels[p.mouseX+(i-(r/2)) + (p.mouseY-(j-(r/2)))*p.width] = p.color(p.red(Color), p.green(Color), p.blue(Color), 255);
+                    //p.set(p.mouseX+(i-(r/2)), p.mouseY-(j-(r/2)), Color);
                 }
                 
             }
@@ -47,6 +56,20 @@ public void setPixels(){
 
 
 }
+
+    public void setPixelsNew(){
+
+            /*
+             * i= y*width + x
+             * 
+             * x=i-y*width
+             * y=(i-x)/width
+             * ?
+             */
+          
+                p.pixels[p.mouseY*p.width  +  p.mouseX]= p.color(p.red(Color), p.green(Color), p.blue(Color), 100);
+
+    }
 
 public void ChangeSize(int change){
     r=r+change;

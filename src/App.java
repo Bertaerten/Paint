@@ -4,6 +4,7 @@ import classes.*;
 
 public class App  extends PApplet{
    
+boolean drag = false;
 
     public static void main(String[] args) {
         String[] processingArgs = {"MySketch"};
@@ -18,7 +19,7 @@ public class App  extends PApplet{
 
     public void settings(){
         size(600, 400);
-        bill = new brush(9, brain, this);
+        bill = new brush(25, brain, this);
     }
 
    
@@ -31,14 +32,28 @@ public class App  extends PApplet{
     }
 
     public void draw(){
+        //background(255);
+        
         loadPixels();
-    
+        
+        if (drag){
+            bill.setPixels(); 
+        }
+        
+        
+
         updatePixels();
+
+        
     }
 
    public void mouseDragged() {
-        bill.setPixels();      
+            drag = true;
     }   
+
+    public void mouseReleased(){
+        drag = false;
+    }
     
   
 }
