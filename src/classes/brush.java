@@ -31,22 +31,22 @@ public void setPixels(){
         for(int j=0;j<r;j++){
             if(p.mouseX+(i-(r/2)) > minX && p.mouseX+(i-(r/2))< maksX){
                 if (p.mouseY-(j-(r/2)) > minY && p.mouseY-(j-(r/2)) < maksY) {
-                    /* 
+                    
                     double pw1= (r/2)-i;
                     double pw2= (r/2)-j;
 
-                    double l = Math.sqrt( Math.pow(pw1,2) + Math.pow(pw2, 2) );// (i-x)^2 + (j-y)^2
-                    //System.out.println(l);
-                    double fade = (r/(2*l)); // linær
+                    double dist = Math.sqrt( Math.pow(pw1,2) + Math.pow(pw2, 2) );// (i-x)^2 + (j-y)^2
                     
-                    //fade = 1-(Math.pow(fade, (haardhed/fade)));
-                    //System.out.println(fade);
-                    float alpha = (float) (fade);
-                    int farve = p.color(0,0,0, alpha);
-                    */
+                    dist =  dist/(r*0.70711f);//mellem 0 og 1 ca.
 
+                    //længde x mellem 1 og 0, haardhed a >0 :  alpha/255 = 1-x^(a/x)
+                    
 
-                    p.pixels[p.mouseX+(i-(r/2)) + (p.mouseY-(j-(r/2)))*p.width] = p.color(p.red(Color), p.green(Color), p.blue(Color), 255);
+                    //double x =() ;
+
+                    float alpha = (float) (15-(dist*155*haardhed));
+
+                    p.pixels[p.mouseX+(i-(r/2)) + (p.mouseY-(j-(r/2)))*p.width] = p.color(p.red(Color), p.green(Color), p.blue(Color), alpha);
                     //p.set(p.mouseX+(i-(r/2)), p.mouseY-(j-(r/2)), Color);
                 }
                 

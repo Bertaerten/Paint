@@ -19,7 +19,7 @@ boolean drag = false;
 
     public void settings(){
         size(600, 400);
-        bill = new brush(25, brain, this);
+        bill = new brush(40, brain, this);
     }
 
    
@@ -34,25 +34,27 @@ boolean drag = false;
     public void draw(){
         //background(255);
         
-        loadPixels();
+        
         
         if (drag){
+            loadPixels();
             bill.setPixels(); 
+            updatePixels();
         }
         
         
-
-        updatePixels();
 
         
     }
 
    public void mouseDragged() {
             drag = true;
+            
     }   
 
     public void mouseReleased(){
         drag = false;
+
     }
     
   
