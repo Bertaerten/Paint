@@ -94,7 +94,7 @@ public class App  extends PApplet{
         fill(255);
     rect(0, 200, 1920, 1880);
     surface.setLocation(0,0);
-    
+        
         bill = new Brush(20, brain, 0.6f, this);
         eraser = new Brush(30, white, 0.8f, this);
     
