@@ -8,7 +8,7 @@ public class brush {
     
 PApplet p;
 int r;
-int minX=50, maksX=250, minY=50, maksY=250;
+int minX=0, maksX=1920, minY=200, maksY=1080;
 int Color;
 
 public brush(int radius, int ColorIN , PApplet s){
