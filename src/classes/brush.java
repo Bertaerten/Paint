@@ -5,7 +5,7 @@ import java.applet.Applet;
 import processing.core.*;
 
 
-public class brush {
+public class Brush {
     
 PApplet p;
 int r;
@@ -13,7 +13,7 @@ int minX=50, maksX=250, minY=50, maksY=250;
 int Color;
 float haardhed;
 
-public brush(int radius, int ColorIN ,float hard, PApplet s){
+public Brush(int radius, int ColorIN ,float hard, PApplet s){
 r=radius;
  p=s;
 Color = ColorIN;
