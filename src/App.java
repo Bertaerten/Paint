@@ -60,8 +60,20 @@ public class App  extends PApplet{
 
     public void settings(){
         size(1920, 1080, P2D);
-        indsæt = new udseende(this);
+    }
 
+   
+
+
+    public void setup(){
+        fill(255);
+    rect(0, 200, 1920, 1880);
+    surface.setLocation(0,0);
+
+    indsæt = new udseende(this);
+
+    bill = new Brush(20, brain, 0.6f, this);
+    eraser = new Brush(30, white, 0.8f, this);
         
 
 
@@ -90,16 +102,7 @@ public class App  extends PApplet{
    
 
 
-    public void setup(){
-        fill(255);
-    rect(0, 200, 1920, 1880);
-    surface.setLocation(0,0);
-    smooth(4);
-        
-        bill = new Brush(20, brain, 0.6f, this);
-        eraser = new Brush(30, white, 0.8f, this);
-    
-    }
+
 
     public void draw(){
         
@@ -113,12 +116,11 @@ public class App  extends PApplet{
             }
         }
 
+        PApplet.dist(1,2,3,4);
+
         colorClicked();
 
         indsæt.indsætUdseende();
-
-
-
 
         farve1Stor.drawButton();
         farve2Stor.drawButton();
