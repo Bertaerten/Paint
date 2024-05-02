@@ -48,13 +48,14 @@ public class App  extends PApplet{
 
     int kind;
 
-    brush bill;
-    brush hvid1;
+    Brush bill;
+    Brush eraser;
     button bros;
     
 
     int brain = color(100, 150, 100);
-    int bruh = color(10, 10, 100);
+    int white = color(255, 255, 255, 255);
+    int bruh = color(255, 255, 255);
 
 
     public void settings(){
@@ -97,9 +98,14 @@ public class App  extends PApplet{
     }
 
     public void draw(){
-        loadPixels();
-    
-        updatePixels();
+        
+        if(mousePressed){
+            if(mouseButton==LEFT){
+                bill.setPixels();
+            }else if (mouseButton == RIGHT){
+                eraser.setPixels();
+            }
+        }
 
         colorClicked();
 
@@ -129,13 +135,7 @@ public class App  extends PApplet{
 
     }
 
-   public void mouseDragged() 
-{
-    if(mouseX<1920 && mouseX>0){
-        if(mouseY<1080 && mouseY>200)
-        set(mouseX, mouseY, color(0));
-    }   
- }
+   
 
 public void colorClicked(){
     if (farve1Stor.isClicked()){
