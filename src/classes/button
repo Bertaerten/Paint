@@ -33,9 +33,6 @@ public button(PApplet s, int ColorIn, int radiusIn, int xIn, int yIn){
      line(1500,5,1500,200);*/
 }
 public void drawButton(){
- circle(x, y, radius);
-
-
  fill(color);//bare pt
  stroke(87,87,85,255);
 
