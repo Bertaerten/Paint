@@ -14,9 +14,7 @@ public Eyedrop(PApplet s){
 }
 
 public int getColor(){
-    p.loadPixels();
-    int color = p.pixels[p.mouseX+p.mouseY*p.width];
-    return color;
+    return p.get(p.mouseX, p.mouseY);
 }
 
 }

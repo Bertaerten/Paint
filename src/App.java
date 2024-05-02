@@ -94,6 +94,7 @@ public class App  extends PApplet{
         fill(255);
     rect(0, 200, 1920, 1880);
     surface.setLocation(0,0);
+    smooth(4);
         
         bill = new Brush(20, brain, 0.6f, this);
         eraser = new Brush(30, white, 0.8f, this);
@@ -102,6 +103,8 @@ public class App  extends PApplet{
 
     public void draw(){
         
+        colorClicked();
+
         if(mousePressed){
             if(mouseButton==LEFT){
                 bill.setPixels();
@@ -138,7 +141,10 @@ public class App  extends PApplet{
 
     }
 
-   
+  public void mouseClicked(){
+    
+
+  } 
 
 public void colorClicked(){
     if (farve1Stor.isClicked()){
