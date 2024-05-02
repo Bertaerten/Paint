@@ -19,8 +19,8 @@ public class App  extends PApplet{
 
     public void settings(){
         size(600, 400);
-        bill = new brush(40, brain, 0.6f, this);
-        eraser = new brush(40, white, 0.8f, this);
+        bill = new brush(20, brain, 0.6f, this);
+        eraser = new brush(30, white, 0.8f, this);
     }
 
    
