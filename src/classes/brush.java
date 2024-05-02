@@ -25,12 +25,15 @@ haardhed=0.5f;
 }
 
 public void setPixels(){
-    p.colorMode(1, 255);// RGB mode
+    //p.colorMode(1, 255);// RGB mode
+    //p.loadPixels();
 
     for(int i=0; i<r ; i++){
         for(int j=0;j<r;j++){
             if(p.mouseX+(i-(r/2)) > minX && p.mouseX+(i-(r/2))< maksX){
                 if (p.mouseY-(j-(r/2)) > minY && p.mouseY-(j-(r/2)) < maksY) {
+
+                    
                     
                     double pw1= (r/2)-i;
                     double pw2= (r/2)-j;
@@ -44,14 +47,18 @@ public void setPixels(){
 
                     //double x =() ;
 
-                    float alpha = (float) (15-(dist*155*haardhed));
+                    float alpha = (float) (100);
 
-                    p.pixels[p.mouseX+(i-(r/2)) + (p.mouseY-(j-(r/2)))*p.width] = p.color(p.red(Color), p.green(Color), p.blue(Color), alpha);
+                    p.fill(0, 25);
+                    p.circle(p.mouseX, p.mouseY, r);
+                    //p.pixels[p.mouseX+(i-(r/2)) + (p.mouseY-(j-(r/2)))*p.width] = p.color(p.red(Color), p.green(Color), p.blue(Color), alpha);
                     //p.set(p.mouseX+(i-(r/2)), p.mouseY-(j-(r/2)), Color);
                 }
                 
             }
         }
+        
+        //p.updatePixels();
     }
 
 

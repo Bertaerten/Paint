@@ -32,14 +32,13 @@ boolean drag = false;
     }
 
     public void draw(){
-        //background(255);
+        background(255);
         
+        //System.out.println(drag);
         
-        
-        if (drag){
-            loadPixels();
-            bill.setPixels(); 
-            updatePixels();
+        if (mousePressed){
+            bill.setPixels();
+            
         }
         
         
