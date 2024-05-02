@@ -59,7 +59,17 @@ public class App  extends PApplet{
 
     public void settings(){
         size(1920, 1080, P2D);
-        indsæt = new udseende(this);
+    }
+
+   
+
+
+    public void setup(){
+        fill(255);
+    rect(0, 200, 1920, 1880);
+    surface.setLocation(0,0);
+
+    indsæt = new udseende(this);
 
         
 
@@ -83,16 +93,6 @@ public class App  extends PApplet{
         hotPinkCirkel = new button(this, hotPink, 30, 1310, 50);
         gulCirkel = new button(this, gul, 30, 1310, 100);
         grøn2Cirkel = new button(this, grøn2, 30, 1310, 150);
-
-    }
-
-   
-
-
-    public void setup(){
-        fill(255);
-    rect(0, 200, 1920, 1880);
-    surface.setLocation(0,0);
     
     }
 
