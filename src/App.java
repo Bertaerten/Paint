@@ -6,9 +6,7 @@ public class App  extends PApplet{
    
 
     public static void main(String[] args) {
-        String[] processingArgs = {"MySketch"};
-		App mySketch = new App();
-		PApplet.runSketch(processingArgs, mySketch);
+        PApplet.main("App");
     }
     udseende indsæt;
 
@@ -60,8 +58,7 @@ public class App  extends PApplet{
 
 
     public void settings(){
-        size(1920, 1080);
-
+        size(1920, 1080, P2D);
         indsæt = new udseende(this);
 
         
@@ -95,8 +92,7 @@ public class App  extends PApplet{
     public void setup(){
         fill(255);
     rect(0, 200, 1920, 1880);
-    indsæt.indsætUdseende();
-
+    surface.setLocation(0,0);
     
     }
 
@@ -107,7 +103,7 @@ public class App  extends PApplet{
 
         colorClicked();
 
-        
+        indsæt.indsætUdseende();
 
 
 
