@@ -111,9 +111,6 @@ public class App  extends PApplet{
 
         indsæt.indsætUdseende();
 
-
-
-
         farve1Stor.drawButton();
         farve2Stor.drawButton();
 
