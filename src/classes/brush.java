@@ -13,11 +13,11 @@ int minX=50, maksX=250, minY=50, maksY=250;
 int Color;
 float haardhed;
 
-public brush(int radius, int ColorIN , PApplet s){
+public brush(int radius, int ColorIN ,float hard, PApplet s){
 r=radius;
  p=s;
 Color = ColorIN;
-haardhed=0.5f;
+haardhed=hard;
 /*
  if (r%2 != 0){ // størrelsen af brushen skal være et lige tal
     r++;
@@ -26,7 +26,7 @@ haardhed=0.5f;
 
 public void setPixels(){
     //p.colorMode(1, 255);// RGB mode
-    //p.loadPixels();
+    p.loadPixels();
 
     for(int i=0; i<r ; i++){
         for(int j=0;j<r;j++){
@@ -41,24 +41,26 @@ public void setPixels(){
                     double dist = Math.sqrt( Math.pow(pw1,2) + Math.pow(pw2, 2) );// (i-x)^2 + (j-y)^2
                     
                     dist =  dist/(r*0.70711f);//mellem 0 og 1 ca.
-
-                    //længde x mellem 1 og 0, haardhed a >0 :  alpha/255 = 1-x^(a/x)
                     
+                    //længde x mellem 1 og 0, haardhed a >0 :  alpha/255 = 1-x^(a/x)
+                    float alpha ;
+                    if ( dist >= haardhed){
+                        alpha = (float) (0);
+                    } else{
+                        alpha = (float) (255);
+                    }
 
-                    //double x =() ;
-
-                    float alpha = (float) (100);
-
-                    p.fill(0, 25);
-                    p.circle(p.mouseX, p.mouseY, r);
-                    //p.pixels[p.mouseX+(i-(r/2)) + (p.mouseY-(j-(r/2)))*p.width] = p.color(p.red(Color), p.green(Color), p.blue(Color), alpha);
+                    
+                    //p.fill(0, 25);
+                   // p.circle(p.mouseX, p.mouseY, r);
+                    p.pixels[p.mouseX+(i-(r/2)) + (p.mouseY-(j-(r/2)))*p.width] = p.color(p.red(Color), p.green(Color), p.blue(Color), alpha);
                     //p.set(p.mouseX+(i-(r/2)), p.mouseY-(j-(r/2)), Color);
                 }
                 
             }
         }
         
-        //p.updatePixels();
+        p.updatePixels();
     }
 
 

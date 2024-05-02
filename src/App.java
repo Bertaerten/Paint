@@ -4,7 +4,6 @@ import classes.*;
 
 public class App  extends PApplet{
    
-boolean drag = false;
 
     public static void main(String[] args) {
         String[] processingArgs = {"MySketch"};
@@ -16,10 +15,12 @@ boolean drag = false;
     brush eraser;
 
     int brain = color(100, 150, 100);
+    int white = color(255, 255, 255, 255);
 
     public void settings(){
         size(600, 400);
-        bill = new brush(40, brain, this);
+        bill = new brush(40, brain, 0.6f, this);
+        eraser = new brush(40, white, 0.8f, this);
     }
 
    
@@ -32,29 +33,24 @@ boolean drag = false;
     }
 
     public void draw(){
-        background(255);
-        
         //System.out.println(drag);
         
         if (mousePressed){
-            bill.setPixels();
+            if(mouseButton == LEFT){
+                bill.setPixels();
+            }
+            else if(mouseButton == RIGHT){
+                eraser.setPixels();
+            }
+            
             
         }
-        
+
         
 
         
     }
 
-   public void mouseDragged() {
-            drag = true;
-            
-    }   
-
-    public void mouseReleased(){
-        drag = false;
-
-    }
     
   
 }
