@@ -99,13 +99,15 @@ public class App  extends PApplet{
 
     public void draw(){
         
-        if(mousePressed){
+      /*   if(mousePressed){
             if(mouseButton==LEFT){
                 bill.setPixels();
             }else if (mouseButton == RIGHT){
                 eraser.setPixels();
             }
-        }
+        }*/
+
+        PApplet.dist(1,2,3,4);
 
         colorClicked();
 
