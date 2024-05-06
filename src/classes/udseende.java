@@ -2,10 +2,10 @@ package classes;
 
 import processing.core.PApplet;
 
-public class udseende {
+public class Udseende {
 PApplet p;
     
-    public udseende (PApplet s) {
+    public Udseende (PApplet s) {
         p = s;
     }
     

@@ -8,7 +8,7 @@ public class App  extends PApplet{
     public static void main(String[] args) {
         PApplet.main("App");
     }
-    udseende indsæt;
+    Udseende indsæt;
 
     button farve1Stor;//skal ændres senere
     button farve2Stor;//skal ændres senere
@@ -70,7 +70,7 @@ public class App  extends PApplet{
     rect(0, 200, 1920, 1880);
     surface.setLocation(0,0);
 
-    indsæt = new udseende(this);
+    indsæt = new Udseende(this);
 
     bill = new Brush(20, brain, 0.6f, this);
     eraser = new Brush(30, white, 0.8f, this);
