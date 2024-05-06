@@ -153,24 +153,19 @@ public void colorClicked(){
   }
 
   if (otherKnaps[1].isClicked()){
-    bill.changeSize(-3);
-    if (bill.getSize()<0.0f){
-      bill.changeHard(1.0f);
+    if (bill.getSize() > 3){
+        bill.changeSize(-3);
     }
   }
 
-  if (otherKnaps[0].isClicked()){
-    bill.changeHard(0.1f);
-
-    if (bill.getHard()>1.0f){
-        bill.changeHard(1.0f);
+  if (otherKnaps[2].isClicked()){
+    if (bill.getHard()<0.9f){
+        bill.changeHard(0.1f);
       }
   }
 
-  if (otherKnaps[0].isClicked()){
-    bill.changeHard(-0.1f);
-
-    if (bill.getHard()<0.01f){
+  if (otherKnaps[3].isClicked()){
+    if (bill.getHard()>0.1f){
         bill.changeHard(0.1f);
       }
   }
