@@ -1,5 +1,5 @@
 package classes;
-import java.applet.Applet;
+//import java.applet.Applet;
 //import math.*;
 
 import processing.core.*;
@@ -12,12 +12,14 @@ int r;
 int minX=0, maksX=1920, minY=200, maksY=1080;
 int Color;
 float haardhed;
+int oldx, oldy;
 
 public Brush(int radius, int ColorIN ,float hard, PApplet s){
 r=radius;
  p=s;
 Color = ColorIN;
 haardhed=hard;
+
 /*
  if (r%2 != 0){ // størrelsen af brushen skal være et lige tal
     r++;
@@ -57,6 +59,24 @@ public void setPixels(){
         //p.updatePixels();
     }
 
+
+}
+
+
+public void lineDraw(){
+   
+    
+    if(p.mouseX-r> minX && p.mouseX+r< maksX){
+        if(p.mouseY-r> minY && p.mouseY+r< maksY){
+            
+            p.strokeWeight(r);
+            p.stroke(p.red(Color), p.green(Color), p.blue(Color));
+    
+            p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
+            
+            p.strokeWeight(1);
+        }
+    }
 
 }
 
