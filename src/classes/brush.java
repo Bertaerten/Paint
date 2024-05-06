@@ -70,12 +70,12 @@ public void setColor(int newColor){
 public void changeHard(float hard){
     haardhed = haardhed + hard;
 }
-public void getSize(int size){
-    r=size;
+public int getSize(){
+    return r;
 }
 
-public void getHard(float ){
-    bill hard
+public float getHard(){
+    return haardhed;
 }
 }
 
