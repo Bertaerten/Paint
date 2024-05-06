@@ -20,5 +20,9 @@ PApplet p;
         p.line(900,5,900,200);
         p.line(1000,5,1000,200);
         p.line(1500,5,1500,200);
+        p.fill(255,255,255,255);
+        p.textSize(20);
+        p.text("Brush Gyatness", 650, 30);
+        p.text("Brush Hardness", 650, 125);
     }
 }

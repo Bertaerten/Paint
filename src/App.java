@@ -12,6 +12,9 @@ public class App  extends PApplet{
 
     Button[] colorButton = new Button [15];
 
+    Button[] otherKnaps = new Button [4];
+    
+
     Button farve1Stor;//skal ændres senere
     Button farve2Stor;//skal ændres senere
 
@@ -64,8 +67,14 @@ public class App  extends PApplet{
         
 
 
-       farve1Stor = new Button(this, sort, 50, 1050, 50);
+        farve1Stor = new Button(this, sort, 50, 1050, 50);
         farve2Stor = new Button(this, hvid, 50, 1050, 140);
+
+        otherKnaps[0] = new Button (this, hvid, 60, 650, 70);
+        otherKnaps[1] = new Button (this, hvid, 60, 800, 70);
+
+        otherKnaps[2] = new Button (this, hvid, 60, 650, 170);
+        otherKnaps[3] = new Button (this, hvid, 60, 800, 170);
 
 
         colorButton[2] = new Button(this, sort, 30, 1110, 50);
@@ -83,8 +92,6 @@ public class App  extends PApplet{
         colorButton[14] = new Button(this, hotPink, 30, 1310, 50);
         colorButton[0] = new Button(this, gul, 30, 1310, 100);
         colorButton[1] = new Button(this, grøn2, 30, 1310, 150);
-
-        
 
     }
 
@@ -105,6 +112,9 @@ if (mouseY<200){
 
         for (int i=0; i<colorButton.length;i++) {
             colorButton[i].drawButton();
+        }
+        for (int i=0; i<otherKnaps.length;i++) {
+            otherKnaps[i].drawButton();
         }
     }
 else{
@@ -138,5 +148,36 @@ public void colorClicked(){
     }
    }
   }
+  if (otherKnaps[0].isClicked()){
+    bill.ChangeSize(3);
+  }
+
+  if (otherKnaps[1].isClicked()){
+    bill.ChangeSize(-3);
+    if (bill.getSize()<0){
+      bill=1;
+    }
+  }
+
+  if (otherKnaps[0].isClicked()){
+    bill.changeHard(0.1);
+
+    if (bill.getHard()>1){
+        bill=1;
+      }
+  }
+
+  if (otherKnaps[0].isClicked()){
+    bill.changeHard(0,1);
+
+    if (bill.getHard()<0.01){
+        bill=0.1;
+      }
+  }
+
+
+
+  bill.setColor(farve1Stor.getColor());
+  eraser.setColor(farve2Stor.getColor());
  }
 }
