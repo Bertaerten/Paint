@@ -1,5 +1,5 @@
 package classes;
-import java.applet.Applet;
+//import java.applet.Applet;
 //import math.*;
 
 import processing.core.*;
@@ -12,12 +12,14 @@ int r;
 int minX=0, maksX=1920, minY=200, maksY=1080;
 int Color;
 float haardhed;
+int oldx, oldy;
 
 public Brush(int radius, int ColorIN ,float hard, PApplet s){
 r=radius;
  p=s;
 Color = ColorIN;
 haardhed=hard;
+
 /*
  if (r%2 != 0){ // størrelsen af brushen skal være et lige tal
     r++;
@@ -61,7 +63,44 @@ public void setPixels(){
 }
 
 
-public void ChangeSize(int change){
+public void lineDraw(){
+   
+    
+    if(p.mouseX-r> minX && p.mouseX+r< maksX){
+        if(p.mouseY-r> minY && p.mouseY+r< maksY){
+            
+            p.strokeWeight(r);
+            p.stroke(p.red(Color), p.green(Color), p.blue(Color));
+    
+            p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
+            
+            p.strokeWeight(1);
+        }
+    }
+
+}
+
+public void spray (){
+    float radx;   // Radius
+    float rady;
+    float angle1; // angle
+    float x;      // result
+    float y;
+    //
+    for (int i=0; i < 40/*maxitteration */; i++) {
+      radx=p.random(r);
+      rady=p.random(r);
+      angle1= p.random(359);
+      //
+      x=(radx*PApplet.cos(PApplet.radians(angle1)))+p.mouseX;
+      y=(rady*PApplet.sin(PApplet.radians(angle1)))+p.mouseY;
+      //
+      p.point(x, y);
+    }
+}
+
+
+public void changeSize(int change){
     r=r+change;
 }
 public void setColor(int newColor){
