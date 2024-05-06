@@ -31,7 +31,7 @@ public class App  extends PApplet{
     int gul = color(255,255,0,255);
     int grøn2 = color(0,255,0,255);
 
-    int kind;
+    int kind = 1;
 
     Brush bill;
     Brush eraser;
@@ -56,7 +56,6 @@ public class App  extends PApplet{
     surface.setLocation(0,0);
 
     indsæt = new Udseende(this);
-    
     indsæt.indsætUdseende();
 
     bill = new Brush(20, brain, 0.6f, this);
@@ -95,16 +94,10 @@ public class App  extends PApplet{
 
 
     public void draw(){
-        
-        if(mousePressed){
-            if(mouseButton==LEFT){
-                bill.setPixels();
-            }else if (mouseButton == RIGHT){
-                eraser.setPixels();
-            }
-        }
 
 
+if (mouseY<200){
+        colorClicked();
         
         // UI del________________
         farve1Stor.drawButton();
@@ -113,11 +106,17 @@ public class App  extends PApplet{
         for (int i=0; i<colorButton.length;i++) {
             colorButton[i].drawButton();
         }
-        colorClicked();
-
-        
-
     }
+else{
+    if(mousePressed){
+        if(mouseButton==LEFT){
+            bill.setPixels();
+        }else if (mouseButton == RIGHT){
+            eraser.setPixels();
+        }
+    }
+}
+ }
 
 public void colorClicked(){
     if (farve1Stor.isClicked()){

@@ -39,7 +39,6 @@ public void setPixels(){
                     double dist = PApplet.dist(i, j, pw1, pw2); //Math.sqrt( Math.pow(pw1,2) + Math.pow(pw2, 2) );// (i-x)^2 + (j-y)^2
                     
                     dist =  dist/(r*0.70711f);//mellem 0 og 1 ca.
-                    System.out.println(dist);
                     float alpha ;
                     if ( dist >= haardhed){
                         alpha = (float) (0);
