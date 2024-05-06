@@ -39,7 +39,6 @@ public void setPixels(){
                     double dist = PApplet.dist(i, j, pw1, pw2); //Math.sqrt( Math.pow(pw1,2) + Math.pow(pw2, 2) );// (i-x)^2 + (j-y)^2
                     
                     dist =  dist/(r*0.70711f);//mellem 0 og 1 ca.
-                    System.out.println(dist);
                     float alpha ;
                     if ( dist >= haardhed){
                         alpha = (float) (0);
@@ -61,8 +60,27 @@ public void setPixels(){
 
 }
 
+public void spray (){
+    float radx;   // Radius
+    float rady;
+    float angle1; // angle
+    float x;      // result
+    float y;
+    //
+    for (int i=0; i < 40/*maxitteration */; i++) {
+      radx=p.random(r);
+      rady=p.random(r);
+      angle1= p.random(359);
+      //
+      x=(radx*PApplet.cos(PApplet.radians(angle1)))+p.mouseX;
+      y=(rady*PApplet.sin(PApplet.radians(angle1)))+p.mouseY;
+      //
+      p.point(x, y);
+    }
+}
 
-public void ChangeSize(int change){
+
+public void changeSize(int change){
     r=r+change;
 }
 public void setColor(int newColor){
