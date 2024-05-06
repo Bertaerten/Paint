@@ -67,8 +67,15 @@ public void ChangeSize(int change){
 public void setColor(int newColor){
     Color=newColor;
 }
-public void sethard(float hard){
-    haardhed = hard;
+public void changeHard(float hard){
+    haardhed = haardhed + hard;
+}
+public void getSize(int size){
+    r=size;
+}
+
+public void getHard(float ){
+    bill hard
 }
 }
 
