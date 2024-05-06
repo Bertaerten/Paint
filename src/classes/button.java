@@ -50,7 +50,6 @@ public int getColor(){
 
 public boolean isClicked(){
  if (p.mousePressed == true){
-
   if (p.mouseX>x-(radius/2) && p.mouseX<x+(radius/2) && p.mouseY>y-(radius/2) && p.mouseY<y+(radius/2)){
     p.fill(0, 0, 0, 255);
     p.circle(x, y, radius+5);

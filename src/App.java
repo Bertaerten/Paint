@@ -10,25 +10,10 @@ public class App  extends PApplet{
     }
     Udseende indsæt;
 
+    button[] colorButton = new button [15];
+
     button farve1Stor;//skal ændres senere
     button farve2Stor;//skal ændres senere
-
-
-    button sortCirkel; //konstant
-    button hvidCirkel; //konstant
-    button sandCirkel; //konstant
-    button grønCirkel; //konstant
-    button blåCirkel; //konstant
-    button gråCirkel; //konstant
-    button pinkCirkel; //konstant
-    button lillaCirkel; //konstant
-    button hvidGulCirkel; //konstant
-    button blåSortCirkel; //konstant
-    button lillaV2Cirkel; //konstant
-    button måskeRødCirkel; //konstant
-    button hotPinkCirkel; //konstant
-    button gulCirkel; //konstant
-    button grøn2Cirkel; //konstant
 
     int sort = color(0,0,0,255);
     int hvid = color(255,255,255,255); 
@@ -59,7 +44,7 @@ public class App  extends PApplet{
 
 
     public void settings(){
-        size(1920, 1080, P2D);
+        size(1920, 1080);
     }
 
    
@@ -75,27 +60,28 @@ public class App  extends PApplet{
     bill = new Brush(20, brain, 0.6f, this);
     eraser = new Brush(30, white, 0.8f, this);
         
+        
 
 
-        farve1Stor = new button(this, sort, 50, 1050, 50);
+       farve1Stor = new button(this, sort, 50, 1050, 50);
         farve2Stor = new button(this, hvid, 50, 1050, 140);
 
 
-        sortCirkel = new button(this, sort, 30, 1110, 50);
-        hvidCirkel = new button(this, hvid, 30, 1110, 100);
-        sandCirkel = new button(this, sand, 30, 1110, 150);
-        grønCirkel = new button(this, grøn, 30, 1160, 50);
-        blåCirkel = new button(this, blå, 30, 1160, 100);
-        gråCirkel = new button(this, grå, 30, 1160, 150);
-        pinkCirkel = new button(this, pink, 30, 1210, 50);
-        lillaCirkel = new button(this, lilla, 30, 1210, 100);
-        hvidGulCirkel = new button(this, hvidGul, 30, 1210, 150);
-        blåSortCirkel = new button(this, blåSort, 30, 1260, 50);
-        lillaV2Cirkel = new button(this, lillaV2, 30, 1260, 100);
-        måskeRødCirkel = new button(this, måskeRød, 30, 1260, 150);
-        hotPinkCirkel = new button(this, hotPink, 30, 1310, 50);
-        gulCirkel = new button(this, gul, 30, 1310, 100);
-        grøn2Cirkel = new button(this, grøn2, 30, 1310, 150);
+        colorButton[2] = new button(this, sort, 30, 1110, 50);
+        colorButton[3] = new button(this, hvid, 30, 1110, 100);
+        colorButton[4] = new button(this, sand, 30, 1110, 150);
+        colorButton[5] = new button(this, grøn, 30, 1160, 50);
+        colorButton[6] = new button(this, blå, 30, 1160, 100);
+        colorButton[7] = new button(this, grå, 30, 1160, 150);
+        colorButton[8] = new button(this, pink, 30, 1210, 50);
+        colorButton[9] = new button(this, lilla, 30, 1210, 100);
+        colorButton[10] = new button(this, hvidGul, 30, 1210, 150);
+        colorButton[11] = new button(this, blåSort, 30, 1260, 50);
+        colorButton[12] = new button(this, lillaV2, 30, 1260, 100);
+        colorButton[13] = new button(this, måskeRød, 30, 1260, 150);
+        colorButton[14] = new button(this, hotPink, 30, 1310, 50);
+        colorButton[0] = new button(this, gul, 30, 1310, 100);
+        colorButton[1] = new button(this, grøn2, 30, 1310, 150);
 
     }
 
@@ -116,7 +102,6 @@ public class App  extends PApplet{
             }
         }
 
-        PApplet.dist(1,2,3,4);
 
         colorClicked();
 
@@ -125,28 +110,11 @@ public class App  extends PApplet{
         farve1Stor.drawButton();
         farve2Stor.drawButton();
 
-        sortCirkel.drawButton();
-        hvidCirkel.drawButton();
-        sandCirkel.drawButton();
-        grønCirkel.drawButton();
-        blåCirkel.drawButton();
-        gråCirkel.drawButton();
-        pinkCirkel.drawButton();
-        lillaCirkel.drawButton();
-        hvidGulCirkel.drawButton();
-        blåSortCirkel.drawButton();
-        lillaV2Cirkel.drawButton();
-        måskeRødCirkel.drawButton();
-        hotPinkCirkel.drawButton();
-        gulCirkel.drawButton();
-        grøn2Cirkel.drawButton();
+        for (int i=0; i<colorButton.length;i++) {
+            colorButton[i].drawButton();
+        }
 
     }
-
-  public void mouseClicked(){
-    
-
-  } 
 
 public void colorClicked(){
     if (farve1Stor.isClicked()){
@@ -156,102 +124,17 @@ public void colorClicked(){
         kind = 2;
       }
 
-  if (kind == 1){
-      if(sortCirkel.isClicked()){
-          farve1Stor.setColor(sortCirkel.getColor());
-      }
-      if(hvidCirkel.isClicked()){
-          farve1Stor.setColor(hvidCirkel.getColor());
-      }
-      if(sandCirkel.isClicked()){
-          farve1Stor.setColor(sandCirkel.getColor());
-      }
-      if(grønCirkel.isClicked()){
-          farve1Stor.setColor(grønCirkel.getColor());
-      }
-      if(blåCirkel.isClicked()){
-          farve1Stor.setColor(blåCirkel.getColor());
-      }
-      if(gråCirkel.isClicked()){
-          farve1Stor.setColor(gråCirkel.getColor());
-      }
-      if(pinkCirkel.isClicked()){
-          farve1Stor.setColor(pinkCirkel.getColor());
-      }
-      if(lillaCirkel.isClicked()){
-          farve1Stor.setColor(lillaCirkel.getColor());
-      }
-      if(hvidGulCirkel.isClicked()){
-          farve1Stor.setColor(hvidGulCirkel.getColor());
-      }
-      if(blåSortCirkel.isClicked()){
-          farve1Stor.setColor(blåSortCirkel.getColor());
-      }
-      if(lillaV2Cirkel.isClicked()){
-          farve1Stor.setColor(lillaV2Cirkel.getColor());
-      }
-      if(måskeRødCirkel.isClicked()){
-          farve1Stor.setColor(måskeRødCirkel.getColor());
-      }
-      if(hotPinkCirkel.isClicked()){
-          farve1Stor.setColor(hotPinkCirkel.getColor());
-      }
-      if(gulCirkel.isClicked()){
-          farve1Stor.setColor(gulCirkel.getColor());
-      }
-      if(grøn2Cirkel.isClicked()){
-          farve1Stor.setColor(grøn2Cirkel.getColor());
-      }
+      for(int i=0; i<colorButton.length ; i++){
+        if (kind == 1){
+          if(colorButton[i].isClicked()){
+            farve1Stor.setColor(colorButton[i].getColor());
+    }
+   }
+        if (kind == 2){
+          if(colorButton[i].isClicked()){
+            farve2Stor.setColor(colorButton[i].getColor());
+    }
+   }
   }
-
-
-  if (kind == 2){
-      if(sortCirkel.isClicked()){
-          farve2Stor.setColor(sortCirkel.getColor());
-      }
-      if(hvidCirkel.isClicked()){
-          farve2Stor.setColor(hvidCirkel.getColor());
-      }
-      if(sandCirkel.isClicked()){
-          farve2Stor.setColor(sandCirkel.getColor());
-      }
-      if(grønCirkel.isClicked()){
-          farve2Stor.setColor(grønCirkel.getColor());
-      }
-      if(blåCirkel.isClicked()){
-          farve2Stor.setColor(blåCirkel.getColor());
-      }
-      if(gråCirkel.isClicked()){
-          farve2Stor.setColor(gråCirkel.getColor());
-      }
-      if(pinkCirkel.isClicked()){
-          farve2Stor.setColor(pinkCirkel.getColor());
-      }
-      if(lillaCirkel.isClicked()){
-          farve2Stor.setColor(lillaCirkel.getColor());
-      }
-      if(hvidGulCirkel.isClicked()){
-          farve2Stor.setColor(hvidGulCirkel.getColor());
-      }
-      if(blåSortCirkel.isClicked()){
-          farve2Stor.setColor(blåSortCirkel.getColor());
-      }
-      if(lillaV2Cirkel.isClicked()){
-          farve2Stor.setColor(lillaV2Cirkel.getColor());
-      }
-      if(måskeRødCirkel.isClicked()){
-          farve2Stor.setColor(måskeRødCirkel.getColor());
-      }
-      if(hotPinkCirkel.isClicked()){
-          farve2Stor.setColor(hotPinkCirkel.getColor());
-      }
-      if(gulCirkel.isClicked()){
-          farve2Stor.setColor(gulCirkel.getColor());
-      }
-      if(grøn2Cirkel.isClicked()){
-          farve2Stor.setColor(grøn2Cirkel.getColor());
-      }
-  }
-}
-
+ }
 }
