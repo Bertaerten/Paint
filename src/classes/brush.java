@@ -87,7 +87,7 @@ public void spray (){
     float x;      // result
     float y;
     //
-    for (int i=0; i < 40/*maxitteration */; i++) {
+    for (int i=0; i < haardhed*10; i++) {
       radx=p.random(r);
       rady=p.random(r);
       angle1= p.random(359);
