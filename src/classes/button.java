@@ -2,7 +2,7 @@ package classes;
 
 import processing.core.*;
 
-public class button {
+public class Button {
     
 PApplet p;
 int radius;
@@ -10,7 +10,7 @@ int color;
 int x;
 int y;
 
-public button(PApplet s, int colorIn, int radiusIn, int xIn, int yIn){
+public Button(PApplet s, int colorIn, int radiusIn, int xIn, int yIn){
 
     radius = radiusIn;
     color = colorIn;

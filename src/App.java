@@ -10,10 +10,10 @@ public class App  extends PApplet{
     }
     Udseende indsæt;
 
-    button[] colorButton = new button [15];
+    Button[] colorButton = new Button [15];
 
-    button farve1Stor;//skal ændres senere
-    button farve2Stor;//skal ændres senere
+    Button farve1Stor;//skal ændres senere
+    Button farve2Stor;//skal ændres senere
 
     int sort = color(0,0,0,255);
     int hvid = color(255,255,255,255); 
@@ -35,7 +35,7 @@ public class App  extends PApplet{
 
     Brush bill;
     Brush eraser;
-    button bros;
+    Button bros;
     
 
     int brain = color(100, 150, 100);
@@ -56,6 +56,8 @@ public class App  extends PApplet{
     surface.setLocation(0,0);
 
     indsæt = new Udseende(this);
+    
+    indsæt.indsætUdseende();
 
     bill = new Brush(20, brain, 0.6f, this);
     eraser = new Brush(30, white, 0.8f, this);
@@ -63,25 +65,27 @@ public class App  extends PApplet{
         
 
 
-       farve1Stor = new button(this, sort, 50, 1050, 50);
-        farve2Stor = new button(this, hvid, 50, 1050, 140);
+       farve1Stor = new Button(this, sort, 50, 1050, 50);
+        farve2Stor = new Button(this, hvid, 50, 1050, 140);
 
 
-        colorButton[2] = new button(this, sort, 30, 1110, 50);
-        colorButton[3] = new button(this, hvid, 30, 1110, 100);
-        colorButton[4] = new button(this, sand, 30, 1110, 150);
-        colorButton[5] = new button(this, grøn, 30, 1160, 50);
-        colorButton[6] = new button(this, blå, 30, 1160, 100);
-        colorButton[7] = new button(this, grå, 30, 1160, 150);
-        colorButton[8] = new button(this, pink, 30, 1210, 50);
-        colorButton[9] = new button(this, lilla, 30, 1210, 100);
-        colorButton[10] = new button(this, hvidGul, 30, 1210, 150);
-        colorButton[11] = new button(this, blåSort, 30, 1260, 50);
-        colorButton[12] = new button(this, lillaV2, 30, 1260, 100);
-        colorButton[13] = new button(this, måskeRød, 30, 1260, 150);
-        colorButton[14] = new button(this, hotPink, 30, 1310, 50);
-        colorButton[0] = new button(this, gul, 30, 1310, 100);
-        colorButton[1] = new button(this, grøn2, 30, 1310, 150);
+        colorButton[2] = new Button(this, sort, 30, 1110, 50);
+        colorButton[3] = new Button(this, hvid, 30, 1110, 100);
+        colorButton[4] = new Button(this, sand, 30, 1110, 150);
+        colorButton[5] = new Button(this, grøn, 30, 1160, 50);
+        colorButton[6] = new Button(this, blå, 30, 1160, 100);
+        colorButton[7] = new Button(this, grå, 30, 1160, 150);
+        colorButton[8] = new Button(this, pink, 30, 1210, 50);
+        colorButton[9] = new Button(this, lilla, 30, 1210, 100);
+        colorButton[10] = new Button(this, hvidGul, 30, 1210, 150);
+        colorButton[11] = new Button(this, blåSort, 30, 1260, 50);
+        colorButton[12] = new Button(this, lillaV2, 30, 1260, 100);
+        colorButton[13] = new Button(this, måskeRød, 30, 1260, 150);
+        colorButton[14] = new Button(this, hotPink, 30, 1310, 50);
+        colorButton[0] = new Button(this, gul, 30, 1310, 100);
+        colorButton[1] = new Button(this, grøn2, 30, 1310, 150);
+
+        
 
     }
 
@@ -92,8 +96,6 @@ public class App  extends PApplet{
 
     public void draw(){
         
-        colorClicked();
-
         if(mousePressed){
             if(mouseButton==LEFT){
                 bill.setPixels();
@@ -103,16 +105,17 @@ public class App  extends PApplet{
         }
 
 
-        colorClicked();
-
-        indsæt.indsætUdseende();
-
+        
+        // UI del________________
         farve1Stor.drawButton();
         farve2Stor.drawButton();
 
         for (int i=0; i<colorButton.length;i++) {
             colorButton[i].drawButton();
         }
+        colorClicked();
+
+        
 
     }
 
