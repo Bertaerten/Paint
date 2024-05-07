@@ -66,12 +66,11 @@ public void setPixels(){
 public void lineDraw(){
    
     
-    if(p.mouseX-r> minX && p.mouseX+r< maksX){
-        if(p.mouseY-r> minY && p.mouseY+r< maksY){
-            
+    if(p.mouseX-(r/2)> minX && p.mouseX+(r/2)< maksX){
+        if(p.mouseY-(r/2)> minY && p.mouseY+(r/2)< maksY){
+            p.strokeCap(PConstants.ROUND);
             p.strokeWeight(r);
-            p.stroke(p.red(Color), p.green(Color), p.blue(Color));
-    
+            p.stroke(Color);
             p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
             
             p.strokeWeight(1);
@@ -86,8 +85,9 @@ public void spray (){
     float angle1; // angle
     float x;      // result
     float y;
+    p.stroke(Color);
     //
-    for (int i=0; i < haardhed*10; i++) {
+    for (int i=0; i < (haardhed*15+10); i++) {
       radx=p.random(r);
       rady=p.random(r);
       angle1= p.random(359);

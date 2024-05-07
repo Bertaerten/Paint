@@ -38,6 +38,8 @@ public class App  extends PApplet{
 
     Brush bill;
     Brush eraser;
+    Bucket brian;
+    Eyedrop barry;
     Button bros;
     
 
@@ -63,6 +65,8 @@ public class App  extends PApplet{
 
     bill = new Brush(20, brain, 0.6f, this);
     eraser = new Brush(30, white, 0.8f, this);
+    brian = new Bucket(this, brain);
+    barry = new Eyedrop(this);
         
         
 
@@ -127,7 +131,8 @@ if (mouseY<200){
 else{
     if(mousePressed){
         if(mouseButton==LEFT){
-            bill.setPixels();
+            //bill.setPixels();
+            brian.fill(barry.getColor());
         }else if (mouseButton == RIGHT){
             eraser.setPixels();
         }
@@ -188,5 +193,6 @@ public void colorClicked(){
   //}
   bill.setColor(farve1Stor.getColor());
   eraser.setColor(farve2Stor.getColor());
+  brian.setNewColor(farve1Stor.getColor());
  }
 }
