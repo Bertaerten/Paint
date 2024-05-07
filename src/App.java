@@ -70,11 +70,11 @@ public class App  extends PApplet{
         farve1Stor = new Button(this, sort, 50, 1050, 50);
         farve2Stor = new Button(this, hvid, 50, 1050, 140);
 
-        otherKnaps[0] = new Button (this, hvid, 60, 650, 70);
-        otherKnaps[1] = new Button (this, hvid, 60, 800, 70);
+        otherKnaps[0] = new Button (this, hvid, 60, 650, 65);
+        otherKnaps[1] = new Button (this, hvid, 60, 800, 65);
 
-        otherKnaps[2] = new Button (this, hvid, 60, 650, 170);
-        otherKnaps[3] = new Button (this, hvid, 60, 800, 170);
+        otherKnaps[2] = new Button (this, hvid, 60, 650, 160);
+        otherKnaps[3] = new Button (this, hvid, 60, 800, 160);
 
 
         colorButton[2] = new Button(this, sort, 30, 1110, 50);
@@ -153,25 +153,22 @@ public void colorClicked(){
   }
 
   if (otherKnaps[1].isClicked()){
-    if (bill.getSize() > 3){
+    if ((bill.getSize()-3) > 3){
         bill.changeSize(-3);
     }
   }
 
   if (otherKnaps[2].isClicked()){
-    if (bill.getHard()<0.9f){
+    if ((bill.getHard()+0.1f)<1f){
         bill.changeHard(0.1f);
-      }
+    }
   }
-
+  
   if (otherKnaps[3].isClicked()){
-    if (bill.getHard()>0.1f){
-        bill.changeHard(0.1f);
-      }
+    if ((bill.getHard()-0.1f)>0.1f){
+        bill.changeHard(-0.1f);
+    }
   }
-
-
-
   bill.setColor(farve1Stor.getColor());
   eraser.setColor(farve2Stor.getColor());
  }
