@@ -12,7 +12,7 @@ public class App  extends PApplet{
 
     Button[] colorButton = new Button [15];
 
-    Button[] otherKnaps = new Button [4];
+    Button[] otherKnaps = new Button [10];
     
 
     Button farve1Stor;//skal ændres senere
@@ -70,11 +70,18 @@ public class App  extends PApplet{
         farve1Stor = new Button(this, sort, 50, 1050, 50);
         farve2Stor = new Button(this, hvid, 50, 1050, 140);
 
-        otherKnaps[0] = new Button (this, hvid, 60, 650, 65);
-        otherKnaps[1] = new Button (this, hvid, 60, 800, 65);
+        otherKnaps[0] = new Button (this, hvid, 30, 600, 80);
+        otherKnaps[1] = new Button (this, hvid, 30, 660, 80);
+        otherKnaps[2] = new Button (this, hvid, 30, 720, 80);
+        otherKnaps[3] = new Button (this, hvid, 30, 780, 80);
+        otherKnaps[4] = new Button (this, hvid, 30, 840, 80);
 
-        otherKnaps[2] = new Button (this, hvid, 60, 650, 160);
-        otherKnaps[3] = new Button (this, hvid, 60, 800, 160);
+        otherKnaps[5] = new Button (this, hvid, 30, 600, 170);
+        otherKnaps[6] = new Button (this, hvid, 30, 660, 170);
+        otherKnaps[7] = new Button (this, hvid, 30, 720, 170);
+        otherKnaps[8] = new Button (this, hvid, 30, 780, 170);
+        otherKnaps[9] = new Button (this, hvid, 30, 840, 170);
+
 
 
         colorButton[2] = new Button(this, sort, 30, 1110, 50);
@@ -148,7 +155,18 @@ public void colorClicked(){
     }
    }
   }
-  if (otherKnaps[0].isClicked()){
+
+  for (int i=0; i<otherKnaps.length; i++){
+    if (otherKnaps[i].isClicked())
+    if (i<5){
+     bill.setSize((1+i)*20);
+    }
+    if (i>5){
+      bill.setSize((1+i)*20);
+     }
+  }
+
+ /* if (otherKnaps[0].isClicked()){
     bill.changeSize(3);
   }
 
@@ -165,10 +183,9 @@ public void colorClicked(){
   }
   
   if (otherKnaps[3].isClicked()){
-    if ((bill.getHard()-0.1f)>0.1f){
-        bill.changeHard(-0.1f);
-    }
-  }
+
+    }*/
+  //}
   bill.setColor(farve1Stor.getColor());
   eraser.setColor(farve2Stor.getColor());
  }

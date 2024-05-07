@@ -24,5 +24,16 @@ PApplet p;
         p.textSize(20);
         p.text("Brush Gyatness", 650, 25);
         p.text("Brush Hardness", 650, 120);
+        p.textSize(20);
+        p.text("1", 595, 55);
+        p.text("2", 655, 55);
+        p.text("3", 715, 55);
+        p.text("4", 775, 55);
+        p.text("5", 835, 55);
+        p.text("1", 595, 145);
+        p.text("2", 655, 145);
+        p.text("3", 715, 145);
+        p.text("4", 775, 145);
+        p.text("5", 835, 145);
     }
 }

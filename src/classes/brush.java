@@ -100,22 +100,18 @@ public void spray (){
 }
 
 
-public void changeSize(int change){
-    r=r+change;
-    System.out.println(r);
+public void setSize(int change){
+    r=change;
 }
 public void setColor(int newColor){
     Color=newColor;
 }
 public void changeHard(float hard){
     haardhed = haardhed + hard;
-    System.out.println(haardhed);
-}
-public int getSize(){
-    return r;
+
 }
 
-public float getHard(){
+public float setHard(){
     return haardhed;
 }
 }
