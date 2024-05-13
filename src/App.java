@@ -36,7 +36,8 @@ public class App  extends PApplet{
 
     int kind = 1;
 
-    
+    char tool = 'l';
+
 
     Brush bill;
     Brush eraser;
@@ -139,7 +140,27 @@ if (mouseY<200){
 else{
     if(mousePressed){
         if(mouseButton==LEFT){
-          switch ()
+          switch ('l') {
+           case 'l':
+           bill.lineDraw();
+           break;
+
+           case 'p':
+           bill.setPixels();
+           break;
+
+           case 's':
+           bill.spray();
+           break;
+
+           case 'e':
+           barry.getColor();
+           break;
+
+           case 'b':
+           brian.fill(barry.getColor());
+           break;
+          }
             bill.spray();
             //brian.fill(barry.getColor());
         }else if (mouseButton == RIGHT){
