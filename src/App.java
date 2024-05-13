@@ -140,52 +140,56 @@ else{
 }
  }
 
-public void colorClicked(){
-    if (farve1Stor.isClicked()){
-        kind = 1;
-      }
-      else if (farve2Stor.isClicked()){
-        kind = 2;
-      }
+ public void colorClicked() {
+     if (farve1Stor.isClicked()) {
+         kind = 1;
+     } else if (farve2Stor.isClicked()) {
+         kind = 2;
+     }
 
-      for(int i=0; i<colorButton.length ; i++){
-        if (kind == 1){
-          if(colorButton[i].isClicked()){
-            farve1Stor.setColor(colorButton[i].getColor());
-    }
-   }
-        if (kind == 2){
-          if(colorButton[i].isClicked()){
-            farve2Stor.setColor(colorButton[i].getColor());
-    }
-   }
-  }
+     for (int i = 0; i < colorButton.length; i++) {
+         if (kind == 1) {
+             if (colorButton[i].isClicked()) {
+                 farve1Stor.setColor(colorButton[i].getColor());
+             }
+         }
+         if (kind == 2) {
+             if (colorButton[i].isClicked()) {
+                 farve2Stor.setColor(colorButton[i].getColor());
+             }
+         }
+     }
 
-  for (int i=0; i<otherKnaps.length; i++){
-    if (otherKnaps[i].isClicked()){
-      if (i<5){
-        bill.setSize((1+i)*20);
-       } 
-       if (i>=5){
-         bill.setHard((i-4)*0.2f);
-        }
+     for (int i = 0; i < otherKnaps.length; i++) {
+         if (otherKnaps[i].isClicked()) {
+             if (i < 5) {
+                 bill.setSize((1 + i) * 20);
 
+                 otherKnaps[i].setColor(sort);
+                 for (int j = 0; j < 5; j++) {
+                     if (j != i)
+                         otherKnaps[j].setColor(hvid);
+                 }
+             } else if (i >= 5 && i < 10) {
+                 bill.setHard((i - 4) * 0.2f);
 
+                 otherKnaps[i].setColor(sort);
+                 for (int j = 5; j < 10; j++) {
+                     if (j != i)
+                         otherKnaps[j].setColor(hvid);
+                 }
+             } else if (i >= 10) {
 
-        
-        for(int j=0; j<otherKnaps.length; j++){
-          if (j==i){
-            otherKnaps[j].setColor(sort);
-          }
-          else{
-            otherKnaps[j].setColor(hvid);
-          }
-      }
-    } 
-  }
+                 for (int j = 10; j < otherKnaps.length; j++) {
+                     if (j != i)
+                         otherKnaps[j].setColor(hvid);
+                 }
+             }
+         }
+     }
 
-  bill.setColor(farve1Stor.getColor());
-  eraser.setColor(farve2Stor.getColor());
-  brian.setNewColor(farve1Stor.getColor());
+     bill.setColor(farve1Stor.getColor());
+     eraser.setColor(farve2Stor.getColor());
+     brian.setNewColor(farve1Stor.getColor());
  }
 }
