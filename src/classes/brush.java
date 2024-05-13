@@ -106,13 +106,9 @@ public void setSize(int change){
 public void setColor(int newColor){
     Color=newColor;
 }
-public void changeHard(float hard){
-    haardhed = haardhed + hard;
-
-}
-
-public float setHard(){
-    return haardhed;
+public void setHard(float hard){
+    haardhed = hard;
+    System.out.println(haardhed);
 }
 }
 

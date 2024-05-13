@@ -131,8 +131,8 @@ if (mouseY<200){
 else{
     if(mousePressed){
         if(mouseButton==LEFT){
-            //bill.setPixels();
-            brian.fill(barry.getColor());
+            bill.spray();
+            //brian.fill(barry.getColor());
         }else if (mouseButton == RIGHT){
             eraser.setPixels();
         }
@@ -162,35 +162,16 @@ public void colorClicked(){
   }
 
   for (int i=0; i<otherKnaps.length; i++){
-    if (otherKnaps[i].isClicked())
-    if (i<5){
-     bill.setSize((1+i)*20);
-    }
-    if (i>5){
-      bill.setSize((1+i)*20);
-     }
+    if (otherKnaps[i].isClicked()){
+      if (i<5){
+        bill.setSize((1+i)*20);
+       } //hardness needed
+       if (i>=5){
+         bill.setHard((i-4)*0.2f);
+        }
+    } 
   }
 
- /* if (otherKnaps[0].isClicked()){
-    bill.changeSize(3);
-  }
-
-  if (otherKnaps[1].isClicked()){
-    if ((bill.getSize()-3) > 3){
-        bill.changeSize(-3);
-    }
-  }
-
-  if (otherKnaps[2].isClicked()){
-    if ((bill.getHard()+0.1f)<1f){
-        bill.changeHard(0.1f);
-    }
-  }
-  
-  if (otherKnaps[3].isClicked()){
-
-    }*/
-  //}
   bill.setColor(farve1Stor.getColor());
   eraser.setColor(farve2Stor.getColor());
   brian.setNewColor(farve1Stor.getColor());
