@@ -43,7 +43,7 @@ public void setPixels(){
                     dist =  dist/(r*0.70711f);//mellem 0 og 1 ca.
                 */
                     float alpha =haardhed*255;
-                    p.stroke(Color, alpha); 
+                    p.stroke(Color, 1000); 
                     p.point(p.mouseX+(i-(r/2)), p.mouseY-(j-(r/2))); 
 
                     //p.pixels[p.mouseX+(i-(r/2)) + (p.mouseY-(j-(r/2)))*p.width] = p.color(p.red(Color), p.green(Color), p.blue(Color), alpha);

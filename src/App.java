@@ -40,7 +40,7 @@ public class App  extends PApplet{
 
 
     Brush bill;
-    Brush eraser;
+    Brush bernie;
     Bucket brian;
     Eyedrop barry;
     Button bros;
@@ -67,7 +67,7 @@ public class App  extends PApplet{
     indsæt.indsætUdseende();
 
     bill = new Brush(20, brain, 0.2f, this);
-    eraser = new Brush(30, white, 0.8f, this);
+    bernie = new Brush(20, white, 0.2f, this);
     brian = new Bucket(this, brain);
     barry = new Eyedrop(this);
         
@@ -119,55 +119,72 @@ public class App  extends PApplet{
 
 
 
+    public void draw() {
 
-    public void draw(){
+        if (mouseY < Udseende.minY) {
+            colorClicked();
 
+            // UI del________________
+            farve1Stor.drawButton();
+            farve2Stor.drawButton();
 
-if (mouseY<Udseende.minY){
-        colorClicked();
-        
-        // UI del________________
-        farve1Stor.drawButton();
-        farve2Stor.drawButton();
-
-        for (int i=0; i<colorButton.length;i++) {
-            colorButton[i].drawButton();
-        }
-        for (int i=0; i<otherKnaps.length;i++) {
-            otherKnaps[i].drawButton();
+            for (int i = 0; i < colorButton.length; i++) {
+                colorButton[i].drawButton();
+            }
+            for (int i = 0; i < otherKnaps.length; i++) {
+                otherKnaps[i].drawButton();
+            }
+        } else {
+            BrushSwitch();
         }
     }
-else{
-    if(mousePressed){
-        if(mouseButton==LEFT){
-          switch (tool) {
-           case 'l':
-           bill.lineDraw();
-           break;
 
-           case 'p':
-           bill.setPixels();
-           break;
+void BrushSwitch(){
 
-           case 's':
-           bill.spray();
-           break;
+    if (mousePressed) {
 
-           case 'e':
-           farve1Stor.setColor(barry.getColor());
-           farve1Stor.drawButton();
-           break;
+        switch (tool) {
+            case 'l':
+                if (mouseButton == LEFT) {
+                    bill.lineDraw();
+                } else if (mouseButton == RIGHT) {
+                    bernie.lineDraw();
+                }
+                break;
 
-           case 'b':
-           brian.fill(barry.getColor());
-           break;
-          }
-        }else if (mouseButton == RIGHT){
-            eraser.setPixels();
+            case 'p':
+                if (mouseButton == LEFT) {
+                    bill.setPixels();
+                } else if (mouseButton == RIGHT) {
+                    bernie.setPixels();
+                }
+                break;
+
+            case 's':
+                if (mouseButton == LEFT) {
+                    bill.spray();
+                } else if (mouseButton == RIGHT) {
+                    bernie.spray();
+                }
+                break;
+
+            case 'e':
+                if (mouseButton == LEFT) {
+                    farve1Stor.setColor(barry.getColor());
+                    farve1Stor.drawButton();
+                } else if (mouseButton == RIGHT) {
+                    farve2Stor.setColor(barry.getColor());
+                    farve2Stor.drawButton();
+                }
+                break;
+
+            case 'b':
+                brian.fill(barry.getColor());
+                break;
         }
     }
 }
- }
+
 
  public void colorClicked() {
      if (farve1Stor.isClicked()) {
@@ -193,6 +210,8 @@ else{
          if (otherKnaps[i].isClicked()) {
              if (i < 5) {
                  bill.setSize((1 + i) * 20);
+                 bernie.setSize((1 + i) * 20);
+
 
                  otherKnaps[i].setColor(sort);
                  for (int j = 0; j < 5; j++) {
@@ -201,6 +220,8 @@ else{
                  }
              } else if (i >= 5 && i < 10) {
                  bill.setHard((i - 4) * 0.2f);
+                 bernie.setHard((i - 4) * 0.2f);
+
 
                  otherKnaps[i].setColor(sort);
                  for (int j = 5; j < 10; j++) {
@@ -234,7 +255,7 @@ else{
      }
 
      bill.setColor(farve1Stor.getColor());
-     eraser.setColor(farve2Stor.getColor());
+     bernie.setColor(farve2Stor.getColor());
      brian.setNewColor(farve1Stor.getColor());
  }
 }
