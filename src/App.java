@@ -169,6 +169,15 @@ public void colorClicked(){
        if (i>=5){
          bill.setHard((i-4)*0.2f);
         }
+
+        for(int j=0; j<otherKnaps.length; j++){
+          if (j==i){
+            otherKnaps[j].setColor(sort);
+          }
+          else{
+            otherKnaps[j].setColor(hvid);
+          }
+      }
     } 
   }
 
