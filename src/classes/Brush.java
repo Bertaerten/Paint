@@ -27,31 +27,27 @@ haardhed=hard;
 }
 
 public void setPixels(){
-    //p.colorMode(1, 255);// RGB mode
-    //p.loadPixels();
+
 
     for(int i=0; i<r ; i++){
         for(int j=0;j<r;j++){
-            if(p.mouseX+(i-(r/2)) > minX && p.mouseX+(i-(r/2))< maksX){
+            if(p.mouseX-(i-(r/2)) > minX && p.mouseX-(i-(r/2))< maksX){
                 if (p.mouseY-(j-(r/2)) > minY && p.mouseY-(j-(r/2)) < maksY) {
-                  /*  
-                    float pw1= (r/2)-i;
-                    float pw2= (r/2)-j;
+                   
+                    float pw1= r-i;
+                    float pw2= r-j;
 
                     double dist = PApplet.dist(i, j, pw1, pw2); //Math.sqrt( Math.pow(pw1,2) + Math.pow(pw2, 2) );// (i-x)^2 + (j-y)^2
                     
                     dist =  dist/(r*0.70711f);//mellem 0 og 1 ca.
-                */
-                    float alpha =haardhed*255;
-                    p.stroke(Color, 1000); 
-                    p.point(p.mouseX+(i-(r/2)), p.mouseY-(j-(r/2))); 
+                
+                    float alpha =haardhed*255* (float) (1-dist);
+                    p.stroke(Color, alpha); 
+                    p.point(p.mouseX-(i-(r/2)), p.mouseY-(j-(r/2))); 
 
-                    //p.pixels[p.mouseX+(i-(r/2)) + (p.mouseY-(j-(r/2)))*p.width] = p.color(p.red(Color), p.green(Color), p.blue(Color), alpha);
                 }
             }
         }
-        
-        //p.updatePixels();
     }
 
 

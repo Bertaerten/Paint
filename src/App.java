@@ -1,5 +1,4 @@
 import processing.core.*;
-import processing.data.Sort;
 import classes.*;
 
 public class App  extends PApplet{
@@ -38,25 +37,15 @@ public class App  extends PApplet{
 
     char tool = 'l';
 
-
     Brush bill;
     Brush bernie;
     Bucket brian;
     Eyedrop barry;
-    Button bros;
     
-
-    int brain = color(100, 150, 100);
-    int white = color(255, 255, 255, 255);
-    int bruh = color(255, 255, 255);
-
 
     public void settings(){
         size(1920, 1080);
     }
-
-   
-
 
     public void setup(){
         fill(255);
@@ -66,9 +55,9 @@ public class App  extends PApplet{
     indsæt = new Udseende(this);
     indsæt.indsætUdseende();
 
-    bill = new Brush(20, brain, 0.2f, this);
-    bernie = new Brush(20, white, 0.2f, this);
-    brian = new Bucket(this, brain);
+    bill = new Brush(20, hvid, 0.2f, this);
+    bernie = new Brush(20, hvid, 0.2f, this);
+    brian = new Bucket(this, hvid);
     barry = new Eyedrop(this);
         
         
@@ -114,10 +103,6 @@ public class App  extends PApplet{
         colorButton[1] = new Button(this, grøn2, 30, 1310, 150);
 
     }
-
-   
-
-
 
     public void draw() {
 
