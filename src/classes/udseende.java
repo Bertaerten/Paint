@@ -37,10 +37,10 @@ public static final int maksX=1920;
         p.text("4", 775, 145);
         p.text("5", 835, 145);
         p.textSize(30);
-        p.text("linje", 30, 70);
-        p.text("pixel", 130, 70);
-        p.text("spray", 235, 70);
-        p.text("eyedrop", 330, 70);
-        p.text("bucket", 450, 70);
+        p.text("Linje", 30, 70);
+        p.text("Pixel", 130, 70);
+        p.text("Spray", 235, 70);
+        p.text("Eyedrop", 330, 70);
+        p.text("Bucket", 450, 70);
     }
 }
