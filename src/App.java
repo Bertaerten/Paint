@@ -140,7 +140,7 @@ if (mouseY<200){
 else{
     if(mousePressed){
         if(mouseButton==LEFT){
-          switch ('l') {
+          switch (tool) {
            case 'l':
            bill.lineDraw();
            break;
@@ -161,8 +161,6 @@ else{
            brian.fill(barry.getColor());
            break;
           }
-            bill.spray();
-            //brian.fill(barry.getColor());
         }else if (mouseButton == RIGHT){
             eraser.setPixels();
         }
@@ -210,6 +208,22 @@ else{
                  }
              } else if (i >= 10) {
 
+              if (i==10){
+                tool = 'l';
+              }
+              else if (i==11) {
+                tool = 'p';
+              }
+              else if (i==12) {
+                tool = 's';
+              }
+              else if (i==13) {
+                tool = 'e';
+              }
+              else if (i==14) {
+                tool = 'b';
+              }
+              otherKnaps[i].setColor(sort);
                  for (int j = 10; j < otherKnaps.length; j++) {
                      if (j != i)
                          otherKnaps[j].setColor(hvid);
