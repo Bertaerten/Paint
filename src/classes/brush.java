@@ -87,7 +87,7 @@ public void spray (){
     float y;
     p.stroke(Color);
     //
-    for (int i=0; i < (haardhed*15+10); i++) {
+    for (int i=0; i < (haardhed*15*r +10); i++) {
       radx=p.random(r);
       rady=p.random(r);
       angle1= p.random(359);
@@ -95,7 +95,9 @@ public void spray (){
       x=(radx*PApplet.cos(PApplet.radians(angle1)))+p.mouseX;
       y=(rady*PApplet.sin(PApplet.radians(angle1)))+p.mouseY;
       //
+      if(x> minX && x< maksX && y>minY && y< maksX){
       p.point(x, y);
+      }
     }
 }
 
@@ -108,7 +110,6 @@ public void setColor(int newColor){
 }
 public void setHard(float hard){
     haardhed = hard;
-    System.out.println(haardhed);
 }
 }
 

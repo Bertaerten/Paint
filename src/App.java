@@ -165,11 +165,14 @@ public void colorClicked(){
     if (otherKnaps[i].isClicked()){
       if (i<5){
         bill.setSize((1+i)*20);
-       } //hardness needed
+       } 
        if (i>=5){
          bill.setHard((i-4)*0.2f);
         }
 
+
+
+        
         for(int j=0; j<otherKnaps.length; j++){
           if (j==i){
             otherKnaps[j].setColor(sort);
