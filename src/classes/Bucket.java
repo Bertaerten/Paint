@@ -9,7 +9,7 @@ public class Bucket {
 PApplet p;
 int oldColor;
 int newColor;
-int maxY=200;
+int maxY=Udseende.maksY;
 
 
 public Bucket(PApplet s, int newColorIN){

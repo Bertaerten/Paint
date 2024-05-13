@@ -4,6 +4,10 @@ import processing.core.PApplet;
 
 public class Udseende {
 PApplet p;
+public static final int minY=200;
+public static final int maksY=1080;
+public static final int minX=0;
+public static final int maksX=1920; 
     
     public Udseende (PApplet s) {
         p = s;
@@ -11,12 +15,12 @@ PApplet p;
     
     public void indsætUdseende(){
         p.fill(41, 39, 37, 255);
-        p.rect(0, 0, 1920, 210);
+        p.rect(0, 0, maksX, minY);
         p.fill(87,87,85,255);
-        p.line(550,5,550,200);
-        p.line(900,5,900,200);
-        p.line(1000,5,1000,200);
-        p.line(1500,5,1500,200);
+        p.line(550,5,550,minY);
+        p.line(900,5,900,minY);
+        p.line(1000,5,1000,minY);
+        p.line(1500,5,1500,minY);
         p.fill(255,255,255,255);
         p.textSize(20);
         p.text("Brush Gyatness", 650, 25);

@@ -9,7 +9,7 @@ public class Brush {
     
 PApplet p;
 int r;
-int minX=0, maksX=1920, minY=200, maksY=1080;
+int minX=Udseende.minX, maksX=Udseende.maksX, minY=Udseende.minY, maksY=Udseende.maksY;
 int Color;
 float haardhed;
 int oldx, oldy;
@@ -34,20 +34,15 @@ public void setPixels(){
         for(int j=0;j<r;j++){
             if(p.mouseX+(i-(r/2)) > minX && p.mouseX+(i-(r/2))< maksX){
                 if (p.mouseY-(j-(r/2)) > minY && p.mouseY-(j-(r/2)) < maksY) {
-  
+                  /*  
                     float pw1= (r/2)-i;
                     float pw2= (r/2)-j;
 
                     double dist = PApplet.dist(i, j, pw1, pw2); //Math.sqrt( Math.pow(pw1,2) + Math.pow(pw2, 2) );// (i-x)^2 + (j-y)^2
                     
                     dist =  dist/(r*0.70711f);//mellem 0 og 1 ca.
-                    float alpha ;
-                    if ( dist >= haardhed){
-                        alpha = (float) (0);
-                    } else{
-                        alpha = (float) (255);
-                    }
-
+                */
+                    float alpha =haardhed*255;
                     p.stroke(Color, alpha); 
                     p.point(p.mouseX+(i-(r/2)), p.mouseY-(j-(r/2))); 
 
@@ -69,8 +64,8 @@ int sizeConstant=5;
             if (p.mouseX - (r / sizeConstant) > minX && p.mouseX + (r / sizeConstant) < maksX) {
                 if (p.mouseY - (r/ sizeConstant) > minY && p.mouseY + (r / sizeConstant) < maksY) {
                     p.strokeCap(PConstants.ROUND);
-                    p.strokeWeight(r / sizeConstant);
-                    p.stroke(p.red(Color), p.green(Color), p.blue(Color), haardhed * 255);
+                    p.strokeWeight(2*r / sizeConstant);
+                    p.stroke(Color, haardhed * 255);
                     p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
 
                     p.strokeWeight(1);
@@ -83,7 +78,7 @@ int sizeConstant=5;
 public void spray (){
     float radx;   // Radius
     float rady;
-    float angle1; // angle
+    float v; // vinkel
     float x;      // result
     float y;
     p.stroke(Color);
@@ -91,10 +86,10 @@ public void spray (){
     for (int i=0; i < (haardhed*15*r +10); i++) {
       radx=p.random(r);
       rady=p.random(r);
-      angle1= p.random(359);
+      v= p.random(359);
       //
-      x=(radx*PApplet.cos(PApplet.radians(angle1)))+p.mouseX;
-      y=(rady*PApplet.sin(PApplet.radians(angle1)))+p.mouseY;
+      x=(radx*PApplet.cos(PApplet.radians(v)))+p.mouseX;
+      y=(rady*PApplet.sin(PApplet.radians(v)))+p.mouseY;
       //
       if(x> minX && x< maksX && y>minY && y< maksX){
       p.point(x, y);

@@ -123,7 +123,7 @@ public class App  extends PApplet{
     public void draw(){
 
 
-if (mouseY<200){
+if (mouseY<Udseende.minY){
         colorClicked();
         
         // UI del________________
