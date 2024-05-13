@@ -174,8 +174,10 @@ void BrushSwitch(){
  public void colorClicked() {
      if (farve1Stor.isClicked()) {
          kind = 1;
+         
      } else if (farve2Stor.isClicked()) {
          kind = 2;
+
      }
 
      for (int i = 0; i < colorButton.length; i++) {
