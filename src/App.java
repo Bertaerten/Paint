@@ -12,7 +12,7 @@ public class App  extends PApplet{
 
     Button[] colorButton = new Button [15];
 
-    Button[] otherKnaps = new Button [10];
+    Button[] otherKnaps = new Button [15];
     
 
     Button farve1Stor;//skal ændres senere
@@ -35,6 +35,8 @@ public class App  extends PApplet{
     int grøn2 = color(0,255,0,255);
 
     int kind = 1;
+
+    
 
     Brush bill;
     Brush eraser;
@@ -86,6 +88,12 @@ public class App  extends PApplet{
         otherKnaps[8] = new Button (this, hvid, 30, 780, 170);
         otherKnaps[9] = new Button (this, hvid, 30, 840, 170);
 
+        otherKnaps[10] = new Button (this, hvid, 90, 55, 130);
+        otherKnaps[11] = new Button (this, hvid, 90, 165, 130);
+        otherKnaps[12] = new Button (this, hvid, 90, 275, 130);
+        otherKnaps[13] = new Button (this, hvid, 90, 385, 130);
+        otherKnaps[14] = new Button (this, hvid, 90, 495, 130);
+
 
 
         colorButton[2] = new Button(this, sort, 30, 1110, 50);
@@ -131,6 +139,7 @@ if (mouseY<200){
 else{
     if(mousePressed){
         if(mouseButton==LEFT){
+          switch ()
             bill.spray();
             //brian.fill(barry.getColor());
         }else if (mouseButton == RIGHT){
@@ -165,7 +174,7 @@ public void colorClicked(){
     if (otherKnaps[i].isClicked()){
       if (i<5){
         bill.setSize((1+i)*20);
-       } //hardness needed
+       }
        if (i>=5){
          bill.setHard((i-4)*0.2f);
         }
@@ -180,7 +189,7 @@ public void colorClicked(){
       }
     } 
   }
-
+  
   bill.setColor(farve1Stor.getColor());
   eraser.setColor(farve2Stor.getColor());
   brian.setNewColor(farve1Stor.getColor());
