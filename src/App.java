@@ -1,5 +1,5 @@
 import processing.core.*;
-
+import processing.data.Sort;
 import classes.*;
 
 public class App  extends PApplet{
@@ -66,7 +66,7 @@ public class App  extends PApplet{
     indsæt = new Udseende(this);
     indsæt.indsætUdseende();
 
-    bill = new Brush(20, brain, 0.6f, this);
+    bill = new Brush(20, brain, 0.2f, this);
     eraser = new Brush(30, white, 0.8f, this);
     brian = new Bucket(this, brain);
     barry = new Eyedrop(this);
@@ -77,19 +77,19 @@ public class App  extends PApplet{
         farve1Stor = new Button(this, sort, 50, 1050, 50);
         farve2Stor = new Button(this, hvid, 50, 1050, 140);
 
-        otherKnaps[0] = new Button (this, hvid, 30, 600, 80);
+        otherKnaps[0] = new Button (this, sort, 30, 600, 80);
         otherKnaps[1] = new Button (this, hvid, 30, 660, 80);
         otherKnaps[2] = new Button (this, hvid, 30, 720, 80);
         otherKnaps[3] = new Button (this, hvid, 30, 780, 80);
         otherKnaps[4] = new Button (this, hvid, 30, 840, 80);
 
-        otherKnaps[5] = new Button (this, hvid, 30, 600, 170);
+        otherKnaps[5] = new Button (this, sort, 30, 600, 170);
         otherKnaps[6] = new Button (this, hvid, 30, 660, 170);
         otherKnaps[7] = new Button (this, hvid, 30, 720, 170);
         otherKnaps[8] = new Button (this, hvid, 30, 780, 170);
         otherKnaps[9] = new Button (this, hvid, 30, 840, 170);
 
-        otherKnaps[10] = new Button (this, hvid, 90, 55, 130);
+        otherKnaps[10] = new Button (this, sort, 90, 55, 130);
         otherKnaps[11] = new Button (this, hvid, 90, 165, 130);
         otherKnaps[12] = new Button (this, hvid, 90, 275, 130);
         otherKnaps[13] = new Button (this, hvid, 90, 385, 130);
@@ -154,7 +154,8 @@ else{
            break;
 
            case 'e':
-           barry.getColor();
+           farve1Stor.setColor(barry.getColor());
+           farve1Stor.drawButton();
            break;
 
            case 'b':

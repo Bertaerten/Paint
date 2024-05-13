@@ -70,7 +70,7 @@ public void lineDraw(){
         if(p.mouseY-(r/2)> minY && p.mouseY+(r/2)< maksY){
             p.strokeCap(PConstants.ROUND);
             p.strokeWeight(r/5);
-            p.stroke(Color);
+            p.stroke(p.red(Color), p.green(Color), p.blue(Color), haardhed*255);
             p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
             
             p.strokeWeight(1);
