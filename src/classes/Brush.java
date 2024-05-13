@@ -62,21 +62,22 @@ public void setPixels(){
 
 }
 
+public void lineDraw() {
+int sizeConstant=5; 
+    if (p.pmouseX - (r / sizeConstant) > minX && p.pmouseX + (r / sizeConstant) < maksX) {
+        if (p.pmouseY - (r / sizeConstant) > minY && p.pmouseY + (r / sizeConstant) < maksY) {
+            if (p.mouseX - (r / sizeConstant) > minX && p.mouseX + (r / sizeConstant) < maksX) {
+                if (p.mouseY - (r/ sizeConstant) > minY && p.mouseY + (r / sizeConstant) < maksY) {
+                    p.strokeCap(PConstants.ROUND);
+                    p.strokeWeight(r / sizeConstant);
+                    p.stroke(p.red(Color), p.green(Color), p.blue(Color), haardhed * 255);
+                    p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
 
-public void lineDraw(){
-   
-    
-    if(p.mouseX-(r/2)> minX && p.mouseX+(r/2)< maksX){
-        if(p.mouseY-(r/2)> minY && p.mouseY+(r/2)< maksY){
-            p.strokeCap(PConstants.ROUND);
-            p.strokeWeight(r/5);
-            p.stroke(p.red(Color), p.green(Color), p.blue(Color), haardhed*255);
-            p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
-            
-            p.strokeWeight(1);
+                    p.strokeWeight(1);
+                }
+            }
         }
     }
-
 }
 
 public void spray (){
