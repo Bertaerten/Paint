@@ -44,13 +44,15 @@ public class App  extends PApplet{
     
 
     public void settings(){
-        size(1920, 1080);
+        fullScreen(P2D);
+        smooth(4);
     }
 
     public void setup(){
         fill(255);
     rect(0, 200, 1920, 1880);
     surface.setLocation(0,0);
+    
 
     indsæt = new Udseende(this);
     indsæt.indsætUdseende();
