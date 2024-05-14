@@ -1,5 +1,4 @@
 package classes;
-//import java.applet.Applet;
 
 import processing.core.*;
 

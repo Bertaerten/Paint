@@ -1,6 +1,5 @@
 package classes;
-//import java.applet.Applet;
-//import math.*;
+
 
 import processing.core.*;
 
@@ -20,10 +19,7 @@ r=radius;
 Color = ColorIN;
 haardhed=hard;
 
-/*
- if (r%2 != 0){ // størrelsen af brushen skal være et lige tal
-    r++;
- } */
+
 }
 
 public void setPixels(){
