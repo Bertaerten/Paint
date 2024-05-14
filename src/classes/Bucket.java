@@ -9,7 +9,7 @@ public class Bucket {
 PApplet p;
 int oldColor;
 int newColor;
-int maxY=Udseende.maksY;
+int minY=Udseende.minY;
 
 
 public Bucket(PApplet s, int newColorIN){
@@ -20,15 +20,19 @@ public Bucket(PApplet s, int newColorIN){
 public void fill(int oldColorIN){
     
     oldColor = oldColorIN;
-    if(oldColor==newColor)
+    if(oldColor==newColor){
         return;
+    }
+        
     
     p.loadPixels();
-    for (int i=maxY*p.width ; i< p.pixels.length ; i++) {
+
+    for (int i=minY*p.width ; i< p.pixels.length ; i++) {
+
         if(p.pixels[i]==oldColor){
             p.pixels[i] = newColor;
         }
-    } 
+    }
     p.updatePixels();
 }
 
