@@ -9,9 +9,9 @@ public class App  extends PApplet{
     }
     Udseende indsæt;
 
-    Button[] colorButton = new Button [15];
+    Button[] colorbuttons = new Button [15];
 
-    Button[] otherKnaps = new Button [15];
+    Button[] otherButtons = new Button [15];
     
 
     Button farve1Stor;//skal ændres senere
@@ -33,14 +33,14 @@ public class App  extends PApplet{
     int gul = color(255,255,0,255);
     int grøn2 = color(0,255,0,255);
 
-    int kind = 1;
+    int lastButton= 1;
 
     char tool = 'l';
 
-    Brush bill;
-    Brush bernie;
-    Bucket brian;
-    Eyedrop barry;
+    Brush brush1;
+    Brush brush2;
+    Bucket bucket;
+    Eyedrop eyedopper;
     
 
     public void settings(){
@@ -57,10 +57,10 @@ public class App  extends PApplet{
     indsæt = new Udseende(this);
     indsæt.indsætUdseende();
 
-    bill = new Brush(20, hvid, 0.2f, this);
-    bernie = new Brush(20, hvid, 0.2f, this);
-    brian = new Bucket(this, hvid);
-    barry = new Eyedrop(this);
+    brush1 = new Brush(20, hvid, 0.2f, this);
+    brush2 = new Brush(20, hvid, 0.2f, this);
+    bucket = new Bucket(this, hvid);
+    eyedopper = new Eyedrop(this);
         
         
 
@@ -68,154 +68,152 @@ public class App  extends PApplet{
         farve1Stor = new Button(this, sort, 50, 1050, 50);
         farve2Stor = new Button(this, hvid, 50, 1050, 140);
 
-        otherKnaps[0] = new Button (this, sort, 30, 600, 80);
-        otherKnaps[1] = new Button (this, hvid, 30, 660, 80);
-        otherKnaps[2] = new Button (this, hvid, 30, 720, 80);
-        otherKnaps[3] = new Button (this, hvid, 30, 780, 80);
-        otherKnaps[4] = new Button (this, hvid, 30, 840, 80);
+        otherButtons[0] = new Button (this, sort, 30, 600, 80);
+        otherButtons[1] = new Button (this, hvid, 30, 660, 80);
+        otherButtons[2] = new Button (this, hvid, 30, 720, 80);
+        otherButtons[3] = new Button (this, hvid, 30, 780, 80);
+        otherButtons[4] = new Button (this, hvid, 30, 840, 80);
 
-        otherKnaps[5] = new Button (this, sort, 30, 600, 170);
-        otherKnaps[6] = new Button (this, hvid, 30, 660, 170);
-        otherKnaps[7] = new Button (this, hvid, 30, 720, 170);
-        otherKnaps[8] = new Button (this, hvid, 30, 780, 170);
-        otherKnaps[9] = new Button (this, hvid, 30, 840, 170);
+        otherButtons[5] = new Button (this, sort, 30, 600, 170);
+        otherButtons[6] = new Button (this, hvid, 30, 660, 170);
+        otherButtons[7] = new Button (this, hvid, 30, 720, 170);
+        otherButtons[8] = new Button (this, hvid, 30, 780, 170);
+        otherButtons[9] = new Button (this, hvid, 30, 840, 170);
 
-        otherKnaps[10] = new Button (this, sort, 90, 55, 130);
-        otherKnaps[11] = new Button (this, hvid, 90, 165, 130);
-        otherKnaps[12] = new Button (this, hvid, 90, 275, 130);
-        otherKnaps[13] = new Button (this, hvid, 90, 385, 130);
-        otherKnaps[14] = new Button (this, hvid, 90, 495, 130);
+        otherButtons[10] = new Button (this, sort, 90, 55, 130);
+        otherButtons[11] = new Button (this, hvid, 90, 165, 130);
+        otherButtons[12] = new Button (this, hvid, 90, 275, 130);
+        otherButtons[13] = new Button (this, hvid, 90, 385, 130);
+        otherButtons[14] = new Button (this, hvid, 90, 495, 130);
 
 
 
-        colorButton[2] = new Button(this, sort, 30, 1110, 50);
-        colorButton[3] = new Button(this, hvid, 30, 1110, 100);
-        colorButton[4] = new Button(this, sand, 30, 1110, 150);
-        colorButton[5] = new Button(this, grøn, 30, 1160, 50);
-        colorButton[6] = new Button(this, blå, 30, 1160, 100);
-        colorButton[7] = new Button(this, grå, 30, 1160, 150);
-        colorButton[8] = new Button(this, pink, 30, 1210, 50);
-        colorButton[9] = new Button(this, lilla, 30, 1210, 100);
-        colorButton[10] = new Button(this, hvidGul, 30, 1210, 150);
-        colorButton[11] = new Button(this, blåSort, 30, 1260, 50);
-        colorButton[12] = new Button(this, lillaV2, 30, 1260, 100);
-        colorButton[13] = new Button(this, måskeRød, 30, 1260, 150);
-        colorButton[14] = new Button(this, hotPink, 30, 1310, 50);
-        colorButton[0] = new Button(this, gul, 30, 1310, 100);
-        colorButton[1] = new Button(this, grøn2, 30, 1310, 150);
+        colorbuttons[2] = new Button(this, sort, 30, 1110, 50);
+        colorbuttons[3] = new Button(this, hvid, 30, 1110, 100);
+        colorbuttons[4] = new Button(this, sand, 30, 1110, 150);
+        colorbuttons[5] = new Button(this, grøn, 30, 1160, 50);
+        colorbuttons[6] = new Button(this, blå, 30, 1160, 100);
+        colorbuttons[7] = new Button(this, grå, 30, 1160, 150);
+        colorbuttons[8] = new Button(this, pink, 30, 1210, 50);
+        colorbuttons[9] = new Button(this, lilla, 30, 1210, 100);
+        colorbuttons[10] = new Button(this, hvidGul, 30, 1210, 150);
+        colorbuttons[11] = new Button(this, blåSort, 30, 1260, 50);
+        colorbuttons[12] = new Button(this, lillaV2, 30, 1260, 100);
+        colorbuttons[13] = new Button(this, måskeRød, 30, 1260, 150);
+        colorbuttons[14] = new Button(this, hotPink, 30, 1310, 50);
+        colorbuttons[0] = new Button(this, gul, 30, 1310, 100);
+        colorbuttons[1] = new Button(this, grøn2, 30, 1310, 150);
 
     }
 
     public void draw() {
 
         if (mouseY < Udseende.minY) {
-            colorClicked();
+            buttonUpdate();
 
             // UI del________________
             farve1Stor.drawButton();
             farve2Stor.drawButton();
 
-            for (int i = 0; i < colorButton.length; i++) {
-                colorButton[i].drawButton();
+            for (int i = 0; i < colorbuttons.length; i++) {
+                colorbuttons[i].drawButton();
             }
-            for (int i = 0; i < otherKnaps.length; i++) {
-                otherKnaps[i].drawButton();
+            for (int i = 0; i < otherButtons.length; i++) {
+                otherButtons[i].drawButton();
             }
         } else {
-            BrushSwitch();
+            brushDraw();
         }
     }
 
-void BrushSwitch(){
+void brushDraw(){
 
     if (mousePressed) {
 
         switch (tool) {
             case 'l':
                 if (mouseButton == LEFT) {
-                    bill.lineDraw();
+                    brush1.lineDraw();
                 } else if (mouseButton == RIGHT) {
-                    bernie.lineDraw();
+                    brush2.lineDraw();
                 }
                 break;
 
             case 'p':
                 if (mouseButton == LEFT) {
-                    bill.setPixels();
+                    brush1.setPixels();
                 } else if (mouseButton == RIGHT) {
-                    bernie.setPixels();
+                    brush2.setPixels();
                 }
                 break;
 
             case 's':
                 if (mouseButton == LEFT) {
-                    bill.spray();
+                    brush1.spray();
                 } else if (mouseButton == RIGHT) {
-                    bernie.spray();
+                    brush2.spray();
                 }
                 break;
 
             case 'e':
                 if (mouseButton == LEFT) {
-                    farve1Stor.setColor(barry.getColor());
+                    farve1Stor.setColor(eyedopper.getColor());
                     farve1Stor.drawButton();
                 } else if (mouseButton == RIGHT) {
-                    farve2Stor.setColor(barry.getColor());
+                    farve2Stor.setColor(eyedopper.getColor());
                     farve2Stor.drawButton();
                 }
                 break;
 
             case 'b':
-                brian.fill(barry.getColor());
+                bucket.fill(eyedopper.getColor());
                 break;
         }
     }
 }
 
 
- public void colorClicked() {
+ public void buttonUpdate() {
      if (farve1Stor.isClicked()) {
-         kind = 1;
-         
+         lastButton= 1; 
      } else if (farve2Stor.isClicked()) {
-         kind = 2;
-
+         lastButton= 2;
      }
 
-     for (int i = 0; i < colorButton.length; i++) {
-         if (kind == 1) {
-             if (colorButton[i].isClicked()) {
-                 farve1Stor.setColor(colorButton[i].getColor());
+     for (int i = 0; i < colorbuttons.length; i++) {
+         if (lastButton== 1) {
+             if (colorbuttons[i].isClicked()) {
+                 farve1Stor.setColor(colorbuttons[i].getColor());
              }
          }
-         if (kind == 2) {
-             if (colorButton[i].isClicked()) {
-                 farve2Stor.setColor(colorButton[i].getColor());
+         if (lastButton== 2) {
+             if (colorbuttons[i].isClicked()) {
+                 farve2Stor.setColor(colorbuttons[i].getColor());
              }
          }
      }
 
-     for (int i = 0; i < otherKnaps.length; i++) {
-         if (otherKnaps[i].isClicked()) {
+     for (int i = 0; i < otherButtons.length; i++) {
+         if (otherButtons[i].isClicked()) {
              if (i < 5) {
-                 bill.setSize((1 + i) * 20);
-                 bernie.setSize((1 + i) * 20);
+                 brush1.setSize((1 + i) * 20);
+                 brush2.setSize((1 + i) * 20);
 
 
-                 otherKnaps[i].setColor(sort);
+                 otherButtons[i].setColor(sort);
                  for (int j = 0; j < 5; j++) {
                      if (j != i)
-                         otherKnaps[j].setColor(hvid);
+                         otherButtons[j].setColor(hvid);
                  }
              } else if (i >= 5 && i < 10) {
-                 bill.setHard((i - 4) * 0.2f);
-                 bernie.setHard((i - 4) * 0.2f);
+                 brush1.setHard((i - 4) * 0.2f);
+                 brush2.setHard((i - 4) * 0.2f);
 
 
-                 otherKnaps[i].setColor(sort);
+                 otherButtons[i].setColor(sort);
                  for (int j = 5; j < 10; j++) {
                      if (j != i)
-                         otherKnaps[j].setColor(hvid);
+                         otherButtons[j].setColor(hvid);
                  }
              } else if (i >= 10) {
 
@@ -234,17 +232,17 @@ void BrushSwitch(){
               else if (i==14) {
                 tool = 'b';
               }
-              otherKnaps[i].setColor(sort);
-                 for (int j = 10; j < otherKnaps.length; j++) {
+              otherButtons[i].setColor(sort);
+                 for (int j = 10; j < otherButtons.length; j++) {
                      if (j != i)
-                         otherKnaps[j].setColor(hvid);
+                         otherButtons[j].setColor(hvid);
                  }
              }
          }
      }
 
-     bill.setColor(farve1Stor.getColor());
-     bernie.setColor(farve2Stor.getColor());
-     brian.setNewColor(farve1Stor.getColor());
+     brush1.setColor(farve1Stor.getColor());
+     brush2.setColor(farve2Stor.getColor());
+     bucket.setNewColor(farve1Stor.getColor());
  }
 }
