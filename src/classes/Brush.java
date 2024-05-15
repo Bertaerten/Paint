@@ -23,8 +23,6 @@ hardness=hard;
 }
 
 public void setPixels(){
-
-
     for(int i=0; i<r ; i++){
         for(int j=0;j<r;j++){
             if(p.mouseX-(i-(r/2)) > minX && p.mouseX-(i-(r/2))< maksX){
@@ -40,13 +38,10 @@ public void setPixels(){
                     float alpha =hardness*255* (float) (1-dist);
                     p.stroke(Color, alpha); 
                     p.point(p.mouseX-(i-(r/2)), p.mouseY-(j-(r/2))); 
-
                 }
             }
         }
     }
-
-
 }
 
 public void lineDraw() {
@@ -68,20 +63,18 @@ int sizeConstant=5;
 }
 
 public void spray (){
-    float randX;   
-    float randY;
+    float randR;   
     float v; 
     float x;
     float y;
     p.stroke(Color);
     
     for (int i=0; i < (hardness*15*r +10); i++) {
-      randX=p.random(r);
-      randY=p.random(r);
-      v= p.random(359);
+      randR=p.random(r);
+      v= p.random(360);
       
-      x=(randX*PApplet.cos(PApplet.radians(v)))+p.mouseX;
-      y=(randY*PApplet.sin(PApplet.radians(v)))+p.mouseY;
+      x=(randR*PApplet.cos(PApplet.radians(v)))+p.mouseX;
+      y=(randR*PApplet.sin(PApplet.radians(v)))+p.mouseY;
       
       if(x> minX && x< maksX && y>minY && y< maksX){
       p.point(x, y);
